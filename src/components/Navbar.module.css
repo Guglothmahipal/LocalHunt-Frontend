@@ -1,0 +1,274 @@
+.modernNavbar {
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+  z-index: 1000;
+  padding: 0.8rem 1.5rem;
+  position: relative;
+  /* height: 8vh; */
+}
+
+.modernNavbarContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.modernBrand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #222;
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: 0.5px;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.modernBrand:hover {
+  transform: scale(1.05);
+}
+
+.modernLogo {
+  height: 50px;
+  width: 45px;
+  margin-right: 10px;
+}
+
+.modernTitle {
+  font-weight: 700;
+  color: #333;
+  white-space: nowrap;
+}
+
+.modernToggler {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  display: none;
+  padding: 8px;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  flex-shrink: 0;
+  z-index: 1001;
+}
+
+/* Hamburger icon styles */
+.togglerIcon {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: #000;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.togglerIcon::before,
+.togglerIcon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 24px;
+  height: 2px;
+  background-color: #000;
+  transition: all 0.3s ease;
+}
+
+.togglerIcon::before {
+  top: -8px;
+}
+
+.togglerIcon::after {
+  top: 8px;
+}
+
+/* Animation when toggled */
+.modernToggler.active .togglerIcon {
+  background-color: transparent;
+}
+
+.modernToggler.active .togglerIcon::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.modernToggler.active .togglerIcon::after {
+  transform: rotate(-45deg);
+  top: 0;
+}
+
+/* --- Navigation Menu --- */
+.modernNavMenu {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.modernNavList {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.modernNavList li {
+  margin: 0 10px;
+}
+
+.modernNavLink {
+  position: relative;
+  color: #333;
+  font-weight: 500;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  padding: 0.3rem 0;
+}
+
+.modernNavLink::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background-color: #f7c600;
+  transition: width 0.3s ease;
+}
+
+.modernNavLink:hover {
+  color: #f7c600;
+}
+
+.modernNavLink:hover::after {
+  width: 100%;
+}
+
+.active {
+  color: #f7c600 !important;
+}
+
+.active::after {
+  width: 100%;
+}
+
+/* --- User Section --- */
+.modernUserSection {
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+.modernUserText {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #444;
+  margin-right: 10px;
+}
+
+.modernProfileIcon {
+  color: #333;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.modernProfileIcon:hover {
+  color: #f7c600;
+  transform: scale(1.15);
+}
+
+/* --- Responsive --- */
+@media (max-width: 991px) {
+  .modernNavbar {
+    padding: 0.8rem 1rem;
+  }
+  
+  .modernNavbarContainer {
+    position: relative;
+  }
+
+  .modernToggler {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    order: 2;
+  }
+
+  .modernBrand {
+    order: 1;
+    flex: 1;
+  }
+
+  .modernTitle {
+    font-size: 1.1rem;
+  }
+
+  .modernLogo {
+    height: 40px;
+    width: 35px;
+    margin-right: 8px;
+  }
+
+  .modernNavMenu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #fff;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 1rem 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+
+  .show {
+    display: flex;
+  }
+
+  .modernNavList {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .modernNavList li {
+    margin: 8px 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .modernNavLink {
+    display: block;
+    padding: 10px 0;
+    width: 100%;
+  }
+
+  .modernUserText {
+    display: none;
+  }
+
+  .modernUserSection {
+    justify-content: center;
+    margin-top: 0.5rem;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .modernTitle {
+    font-size: 1rem;
+  }
+  
+  .modernLogo {
+    height: 35px;
+    width: 30px;
+    margin-right: 6px;
+  }
+}

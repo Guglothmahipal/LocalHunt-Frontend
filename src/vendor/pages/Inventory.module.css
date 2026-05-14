@@ -1,0 +1,495 @@
+/* Header */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 25px;
+  /* background-color: beige; */
+  gap: 15px;
+  margin-left: 20px;
+}
+
+.title {
+  color: #444;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.addForm {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.addForm input[type="text"] {
+  padding: 10px 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  flex: 1;
+  min-width: 150px;
+}
+
+.addForm input[type="file"] {
+  background-color: white;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  padding: 8px;
+  flex: 1;
+  min-width: 150px;
+}
+
+.addBtn {
+  background-color: #ffc908;
+  border: none;
+  color: #000;
+  padding: 10px 20px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  flex-shrink: 0;
+}
+.addBtn:hover {
+  background-color: #ffdb4d;
+}
+
+/* Empty state */
+.emptyState {
+  text-align: center;
+  color: #555;
+  margin-top: 100px;
+  padding: 0 20px;
+}
+
+.emptyState h2 {
+  font-size: 1.5rem;
+  margin-top: 15px;
+  color: #333;
+}
+
+.emptyState p {
+  color: #666;
+}
+
+/* .emptyImage {
+  width: 120px;
+  opacity: 0.8;
+} */
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  padding: 15px;
+  /* keeps center alignment when few items */
+}
+
+.card {
+  width: 100%;
+  max-width: 280px;
+  min-height: 280px; /* Ensures a decent starting height */
+  border-radius: 12px;
+  overflow: visible; /* Allow overflow or set to auto for scroll */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Start at the top */
+  background-color: white;
+  margin: 0 auto;
+  padding-bottom: 16px;
+  overflow: hidden; /* Extra space for button */
+  transition: transform 0.3s ease;
+}
+
+.image {
+  width: 100%;
+  max-height: 140px;
+  object-fit: cover;
+  border-radius: 0%;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+/* .image {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+} */
+
+.cardContent {
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+}
+
+.cardContent h4 {
+  margin-bottom: 8px;
+  color: #444;
+  font-size: 1rem;
+  word-wrap: break-word;
+}
+
+.removeBtn {
+  background-color: #ff4d4f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+.removeBtn:hover {
+  background-color: #e64547;
+}
+
+/* Loading text */
+.loadingText {
+  /* text-align: center; */
+  /* color: #777; */
+  /* margin-top: 100px; */
+  /* font-size: 0.5rem; */
+  /* padding: 0 20px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.filterDropdown {
+  margin-left: 12px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  width: 400px;
+  max-width: 100%;
+}
+
+.filterDropdown:hover {
+  border-color: #1a73e8;
+}
+
+.lottie {
+  height: 290px;
+  max-width: 100%;
+}
+
+/* === RESPONSIVE MEDIA QUERIES === */
+
+/* Large screens (1200px and above) */
+@media (min-width: 1200px) {
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+    padding: 20px;
+  }
+  
+  .card {
+    max-width: 300px;
+    min-height: 300px;
+  }
+  
+  .image {
+    max-height: 160px;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+}
+
+/* Medium screens (1024px and below) */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 18px;
+    padding: 15px;
+  }
+  
+  .card {
+    max-width: 240px;
+    min-height: 260px;
+  }
+  
+  .image {
+    max-height: 130px;
+  }
+  
+  .filterDropdown {
+    width: 300px;
+  }
+  
+  .lottie {
+    height: 250px;
+  }
+}
+
+/* Tablets (768px and below) */
+@media (max-width: 768px) {
+  .header {
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 20px;
+    gap: 12px;
+    align-items: center;
+  }
+  
+  .title {
+    font-size: 1.6rem;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .addForm {
+    justify-content: center;
+    gap: 8px;
+  }
+  
+  .addForm input[type="text"],
+  .addForm input[type="file"] {
+    min-width: 120px;
+    padding: 8px 12px;
+  }
+  
+  .addBtn {
+    padding: 8px 16px;
+  }
+  
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 15px;
+    padding: 12px;
+  }
+  
+  .card {
+    max-width: 200px;
+    min-height: 240px;
+  }
+  
+  .image {
+    max-height: 120px;
+  }
+  
+  .filterDropdown {
+    width: 250px;
+    margin-left: 0;
+    margin-top: 10px;
+  }
+  
+  .lottie {
+    height: 200px;
+  }
+  
+  .emptyState {
+    margin-top: 80px;
+  }
+  
+  .emptyState h2 {
+    font-size: 1.3rem;
+  }
+}
+
+/* Mobile devices (600px and below) */
+@media (max-width: 600px) {
+  .header {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 15px;
+    gap: 10px;
+  }
+  
+  .title {
+    font-size: 1.4rem;
+  }
+  
+  .addForm {
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .addForm input[type="text"],
+  .addForm input[type="file"],
+  .addBtn {
+    width: 100%;
+    min-width: auto;
+  }
+  
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 12px;
+    padding: 10px;
+  }
+  
+  .card {
+    max-width: 170px;
+    min-height: 220px;
+  }
+  
+  .image {
+    max-height: 100px;
+  }
+  
+  .cardContent {
+    padding: 8px;
+  }
+  
+  .cardContent h4 {
+    font-size: 0.9rem;
+  }
+  
+  .filterDropdown {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .lottie {
+    height: 180px;
+  }
+  
+  .emptyState {
+    margin-top: 60px;
+  }
+  
+  .emptyState h2 {
+    font-size: 1.2rem;
+  }
+  
+  .emptyState p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Small mobile devices (480px and below) */
+@media (max-width: 480px) {
+  .header {
+    margin-left: 8px;
+    margin-right: 8px;
+    margin-top: 12px;
+  }
+  
+  .title {
+    font-size: 1.3rem;
+  }
+  
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 10px;
+    padding: 8px;
+  }
+  
+  .card {
+    max-width: 150px;
+    min-height: 200px;
+  }
+  
+  .image {
+    max-height: 90px;
+  }
+  
+  .cardContent h4 {
+    font-size: 0.85rem;
+    margin-bottom: 6px;
+  }
+  
+  .removeBtn {
+    padding: 5px 10px;
+    font-size: 0.85rem;
+  }
+  
+  .lottie {
+    height: 150px;
+  }
+  
+  .emptyState {
+    margin-top: 50px;
+  }
+  
+  .emptyState h2 {
+    font-size: 1.1rem;
+    margin-top: 10px;
+  }
+  
+  .loadingText {
+    margin-top: 80px;
+    font-size: 1rem;
+  }
+}
+
+/* Very small mobile devices (360px and below) */
+@media (max-width: 360px) {
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 8px;
+    padding: 6px;
+  }
+  
+  .card {
+    max-width: 140px;
+    min-height: 190px;
+  }
+  
+  .image {
+    max-height: 80px;
+  }
+  
+  .cardContent {
+    padding: 6px;
+  }
+  
+  .cardContent h4 {
+    font-size: 0.8rem;
+  }
+  
+  .lottie {
+    height: 130px;
+  }
+  
+  .header {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  
+  .addForm {
+    gap: 6px;
+  }
+  
+  .addForm input[type="text"],
+  .addForm input[type="file"] {
+    padding: 6px 10px;
+  }
+  
+  .addBtn {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Orientation-specific adjustments */
+@media (max-width: 768px) and (orientation: landscape) {
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
+  
+  .card {
+    max-width: 180px;
+    min-height: 200px;
+  }
+  
+  .image {
+    max-height: 90px;
+  }
+  
+  .lottie {
+    height: 160px;
+  }
+}

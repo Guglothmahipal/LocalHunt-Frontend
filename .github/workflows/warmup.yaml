@@ -1,0 +1,67 @@
+name: Keep Render API Warm
+
+on:
+  schedule:
+    - cron: "*/5 * * * *" # Run every 5 minutes
+  workflow_dispatch: # Allow manual run
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+
+    steps:
+      - name: Ping Render API
+        id: ping
+        run: |
+          echo "🔄 Starting Render API warm-up..."
+          URL="https://localhunt.onrender.com/ping"
+          
+          echo "Requesting: $URL"
+          echo "----------------------------------------"
+
+          # Make the request and capture output + status
+          RESPONSE=$(curl -s -w "%{http_code}" -o curl_output.txt \
+            --max-time 30 \
+            -A "RenderWarmUpBot/1.0 (GitHub Actions)" \
+            $URL) || true
+
+          echo "----------------------------------------"
+          echo "📡 HTTP Response Code: $RESPONSE"
+          echo "📦 Response Body:"
+          cat curl_output.txt
+          echo ""
+          echo "----------------------------------------"
+
+          # Check if the response is not 200 OK
+          if [ "$RESPONSE" -ne 200 ]; then
+            echo "❌ Ping failed with HTTP $RESPONSE"
+            echo "fail=true" >> $GITHUB_OUTPUT
+            exit 1
+          else
+            echo "✅ API is awake and responding (HTTP $RESPONSE)"
+          fi
+
+      - name: Send failure email
+        if: failure()
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{ secrets.EMAIL_USERNAME }}
+          password: ${{ secrets.EMAIL_PASSWORD }}
+          subject: "🚨 Render API Warmup Failed"
+          to: webjaichey@gmail.com
+          from: "GitHub Actions <${{ secrets.EMAIL_USERNAME }}>"
+          body: |
+            ❗ The Render API warmup job failed!
+
+            📅 Timestamp: ${{ github.event.repository.updated_at }}
+            🧰 Workflow: ${{ github.workflow }}
+            ⚙️ Job: ${{ github.job }}
+            📦 Repo: ${{ github.repository }}
+
+            ----------------------------------------
+            The ping request did not return HTTP 200.
+            Check Render service logs or visit:
+            https://localhunt.onrender.com/ping

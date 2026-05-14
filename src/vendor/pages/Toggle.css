@@ -1,0 +1,52 @@
+.toggle-container {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* space between text and switch */
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* status text colors */
+.status {
+  transition: color 0.3s ease;
+}
+.toggle-switch.on ~ .status {
+  color: #ffc908;
+}
+.toggle-switch.off ~ .status {
+  color: red;
+}
+
+.toggle-switch {
+  width: 50px;
+  height: 26px;
+  background-color: #ccc;
+  border-radius: 50px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-switch.on {
+  background-color: #ffc908;
+}
+
+.toggle-switch.off {
+  background-color: #f44336;
+}
+
+.switch-handle {
+  width: 22px;
+  height: 22px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.3s ease;
+}
+
+.toggle-switch.on .switch-handle {
+  transform: translateX(24px);
+}

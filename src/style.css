@@ -1,0 +1,1501 @@
+/* ----------------------------- Reset & Global --------------------------------- */
+html, body, .main {
+  scrollbar-width: none;
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+/* ----------------------------- Buttons --------------------------------- */
+.login-btn {
+  display: inline-block;
+  transition: all 0.3s ease;
+  border-radius: 6px;
+  border: 2px solid #ffc908;
+  background-color: white;
+  padding: 10px 16px;
+  font-size: 0.95rem;
+}
+
+.login-btn:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.signupchoice-btn {
+  display: inline-block;
+  transition: all 0.3s ease;
+  border-radius: 6px;
+  background-color: #ffc408;
+  border: 2px solid #ffc908;
+  padding: 10px 16px;
+  font-size: 0.95rem;
+}
+
+.signupchoice-btn:hover {
+  background-color: #ffc908;
+  border: 2px solid #ffc908;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+/* ----------------------------- Homepage --------------------------------- */
+.homepage {
+  display: flex;
+  flex-direction: row;
+  margin-top: 0;
+  min-height: 100vh;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.left-content-main {
+  width: 50%;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font: 2rem, sans-serif;
+}
+
+.right-content {
+  width: 50%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+.left-content-main p {
+  font-size: 1.5rem;
+}
+
+/* ----------------------------- Signup Choice --------------------------------- */
+.signup-choice-main {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.signup-choice-form {
+  gap: 25px;
+  width: 500px;
+  border-radius: 16px;
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: #fff;
+  /* box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12); */
+}
+
+.signup-choice-links {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.signup-choice-back {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #666;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.signup-choice-back:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+.signup-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 12px 20px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  color: black;
+  width: 100%;
+}
+
+.signup-btn.vendor {
+  background-color: #ffc908;
+  border: 2px solid #ffc908;
+}
+
+.signup-btn.user {
+  background-color: white;
+  border: 2px solid #ffc908;
+}
+
+.signup-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.back {
+  display: flex;
+  flex-direction: row;
+  text-decoration: none !important; 
+  align-items: center;
+  color: #000;
+  gap: 2px;
+  font-size: large;
+}
+
+.back:hover {
+  text-decoration: none !important;
+}
+
+.back:hover .backicon {
+  transform: translateX(-5px);
+  transition: transform 0.2s cubic-bezier(0.23, 1, 0.32, 1);    
+}
+
+.backtext {
+  text-decoration: none !important;
+  font-weight: 600;
+}
+
+.backtext:hover {
+  text-decoration: none !important;
+}
+
+/* ----------------------------- Service Page --------------------------------- */
+.service-main {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ----------------------------- User Signup --------------------------------- */
+.usersignup-main {
+  display: flex;
+  min-height: 100vh;
+  height: auto;
+  overflow-x: hidden;
+}
+
+/* Left half */
+.usersignup-content.left {
+  background-color: #fff;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  overflow-y: auto;
+  
+}
+
+/* Right half */
+.usersignup-content-right {
+  width: 50%;
+  /* background: linear-gradient(135deg, #ff6489 0%, #e46c88 40%, #ca647d 70%, #984055 100%); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.user-form-main{
+  /* background-color: black; */
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.user-form-container {
+  box-shadow: 0px 1px 55px 10px rgba(51, 51, 51, 0.1);
+  padding: 30px 25px;
+  border-radius: 15px;
+  /* background-color: #c61a1a; */
+  width: 100%;
+  max-width: 400px;
+  text-align: left;
+  margin: 20px 0;
+}
+
+.user-form-container h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.user-form-container p {
+  text-align: center;
+  color: #555;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Labels */
+.user-form label {
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: #333;
+  margin-bottom: 5px;
+  display: block;
+}
+
+/* Inputs */
+.user-form input {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 1rem;
+  border: 1px solid #333;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  box-sizing: border-box;
+}
+
+.user-form input:focus {
+  border-color: #e77b08;
+  outline: none;
+  box-shadow: 0 0 4px rgba(231, 64, 8, 0.3);
+}
+
+/* Button container */
+.form-button-container {
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.create-account-btn {
+  width: 100%;
+  background-color: #ffc908;
+  color: white;
+  font-weight: 600;
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+  margin: 0;
+}
+
+.create-account-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Login link */
+.login-link {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 0.85rem;
+  color: #444;
+  padding-bottom: 10px;
+}
+
+.login-link a {
+  color: black;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+/* ----------------------------- Vendor Signup --------------------------------- */
+.vendorsignup-main {
+  display: flex;
+  min-height: 100vh;
+  height: auto;
+  overflow-x: hidden;
+}
+
+/* Left half */
+.vendorsignup-content.left {
+  /* background-color: black; */
+  width: 50%;
+  display: flex;
+  /* justify-content: flex-start !important; */
+  /* align-items: flex-end; */
+  padding: 40px 20px;
+  overflow-y: auto;
+  /* background-color: black; */
+}
+
+/* Right half */
+.vendorsignup-content-right {
+  width: 50%;
+  /* background: linear-gradient(135deg, #ff6489 0%, #e46c88 40%, #ca647d 70%, #984055 100%); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.vendor-form-main{
+  /* background-color: black; */
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.vendor-form-container {
+  box-shadow: 0px 1px 55px 10px rgba(51, 51, 51, 0.1);
+  padding: 30px 25px;
+  border-radius: 15px;
+  background-color: #fff;
+  width: 100%;
+  max-width: 400px;
+  text-align: left;
+  margin: 20px 0;
+}
+
+.vendor-form-container h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.vendor-form-container p {
+  text-align: center;
+  color: #555;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Labels */
+.vendor-form label {
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: #333;
+  margin-bottom: 5px;
+  display: block;
+}
+
+/* Inputs */
+.vendor-form input {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 1rem;
+  border: 1px solid #333;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  box-sizing: border-box;
+}
+
+.vendor-form input:focus {
+  border-color: #e77b08;
+  outline: none;
+  box-shadow: 0 0 4px rgba(231, 64, 8, 0.3);
+}
+
+.vendor-form .form-button-container {
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.vendor-form .create-account-btn {
+  width: 100%;
+  background-color: #ffc908;
+  color: white;
+  font-weight: 600;
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.vendor-form .create-account-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.vendor-form .login-link {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 0.85rem;
+  color: #444;
+  padding-bottom: 10px;
+}
+
+.vendor-form .login-link a {
+  color: black;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.vendor-form .login-link a:hover {
+  text-decoration: underline;
+}
+
+/* -------------------------------- Login ------------------------------------- */
+.login-main {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-height: 90vh;
+  padding: 20px;
+  box-sizing: border-box;
+   overflow-y: hidden !important;
+  -ms-overflow-style: none;    /* IE and Edge */  
+}
+
+.login-card-left {
+  z-index: 999;
+  /* background: linear-gradient(135deg, #ff6489 0%, #e46c88 40%, #ca647d 70%, #984055 100%); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 40%;
+  /* border-radius: 10px; */
+}
+
+.login-card-right {
+  /* background-color: black; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 60%;
+}
+.loginanim{
+  width: 700px;
+}
+.login-card {
+  width: 70%;
+  max-width: 450px;
+  min-height: 500px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.login-form-container h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.login-form {
+  text-align: left;
+  width: 100%;
+}
+
+.login-form-container p {
+  text-align: center;
+  color: #555;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.login-form label {
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: #333;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 1rem;
+  border: 1px solid #333;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  box-sizing: border-box;
+}
+
+.signup-link a:hover {
+  text-decoration: underline;
+}
+
+.signup-link {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 0.85rem;
+  color: #444;
+}
+
+.signup-link a {
+  color: black;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* ---- OTP Login Small Additions ---- */
+.otp-timer {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.otp-resend {
+  color: #ff6489 !important;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.otp-resend:hover {
+  text-decoration: underline;
+}
+
+/* ----------------------------- Content Split --------------------------------- */
+.content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.content.left {
+  width: 50%;
+}
+
+.content.right {
+  width: 50%;
+}
+
+/* ----------------------------- Misc --------------------------------- */
+.hello {
+  color: #FF6B35;
+}
+
+/* ----------------------------- OTP Modal ----------------------------- */
+.otp-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: blur(5px);
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.otp-modal {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  max-width: 320px;
+  width: 90%;
+  animation: fadeIn 0.3s ease;
+}
+
+.otp-modal h4 {
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.otp-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #333;
+  border-radius: 6px;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.otp-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.verify-btn {
+  flex: 1;
+  background-color: #ffc908;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.cancel-btn {
+  flex: 1;
+  background-color: #ccc;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  color: black;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.otp-timer {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.otp-msg {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: #d9534f;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.resend-btn {
+  background-color: #ffcc00;
+  color: #000;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  margin-left: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.resend-btn:hover {
+  background-color: #ffdb4d;
+}
+
+.otp-expired-text {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+
+.navigate-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 20px auto;
+  padding: 12px 24px;
+  background: linear-gradient(90deg, #FFD700, #FFC700);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4);
+}
+
+.navigate-btn:hover {
+  background: linear-gradient(90deg, #FFD700, #DAA520);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(218, 165, 32, 0.7);
+}
+
+/* Disabled button */
+.navigate-btn.disabled {
+  background-color: #888;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Car wrapper */
+.car-wrapper {
+  position: relative;
+  width: 80px;
+  height: 50px;
+}
+
+/* Car forward motion on hover */
+.navigate-btn:hover .car-wrapper {
+  animation: drive 1s ease-in-out infinite alternate;
+}
+
+@keyframes drive {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(10px); }
+}
+
+/* Wheels spin like real car wheels */
+.wheel, .hub {
+  transform-origin: center center;
+}
+
+/* Dust trail */
+.dust {
+  position: absolute;
+  bottom: 4px;
+  left: 10px;
+  width: 6px;
+  height: 6px;
+  background: radial-gradient(circle, #e0e0e0 0%, transparent 70%);
+  opacity: 0;
+}
+
+.navigate-btn:hover .dust {
+  animation: dustTrail 0.8s ease-out infinite;
+}
+
+@keyframes dustTrail {
+  0% { opacity: 0; transform: translateX(0) scale(0.5); }
+  50% { opacity: 0.8; transform: translateX(-10px) scale(1); }
+  100% { opacity: 0; transform: translateX(-20px) scale(1.2); }
+}
+
+/* Headlights */
+.headlight {
+  filter: drop-shadow(0 0 6px #fff);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Headlights glow while navigating */
+.navigate-btn.navigating .headlight {
+  opacity: 1;
+  animation: blink 1s ease-in-out infinite alternate;
+}
+
+@keyframes blink {
+  0% { opacity: 0.8; filter: drop-shadow(0 0 4px #fff); }
+  100% { opacity: 1; filter: drop-shadow(0 0 12px #fff); }
+}
+
+/* ==================== RESPONSIVE MEDIA QUERIES ==================== */
+
+/* Service Grid Responsive */
+@media (max-width: 1200px) {
+  .service-grid { 
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px;
+  }
+}
+
+@media (max-width: 992px) {
+  .service-grid { 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 18px;
+  }
+  
+  .service-icon-container {
+    height: 160px;
+  }
+  
+  .service-icon {
+    font-size: 3.5rem;
+  }
+  .login-card-left{
+    width: 100%;
+  }
+  .login-card-right{
+    width: 40%;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .service-grid { 
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 15px;
+  }
+  
+  .service-icon-container {
+    height: 140px;
+  }
+  
+  .service-icon {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .service-grid { 
+    grid-template-columns: 1fr; 
+    gap: 15px;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  .service-icon-container {
+    height: 130px;
+  }
+  
+  .service-icon {
+    font-size: 2.8rem;
+  }
+  .signupanim{
+    display: none !important;
+  }
+.vendorsignup-content.left{
+  display: none !important;
+}
+  .eyeicon{
+    top: 55% !important;
+  }
+
+}
+
+
+
+
+  .eyeicon{
+    top: 55% !important;
+  }
+
+
+
+/* Login Responsive */
+@media screen and (max-width: 768px) {
+  .login-main {
+    padding: 15px;
+     display: flex;
+     flex-direction: column;
+     overflow-x: scroll;
+     /* background-color: #000; */
+  }
+  .login-card-left{
+    width: 100%;
+  }
+  .login-card {
+    width: 100%;
+    padding: 30px 25px;
+    /* min-height: 450px; */
+    /* border: solid; */
+   
+  }
+  
+  .login-form-container h2 {
+    font-size: 1.6rem;
+  }
+  
+  .login-form input {
+    padding: 9px 11px;
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .login-main {
+    padding: 10px;
+    flex-direction: column;
+    /* height: auto; */
+    min-height: 100vh;
+    overflow-y: hidden;
+    
+  }
+ 
+  
+  .login-card-left, 
+  .login-card-right {
+    width: 100%;
+    /* height: auto; */
+    /* min-height: 50vh; */
+  }
+  .loginanim{
+    display: none;
+  }
+  .login-card {
+    width: 90%;
+    padding: 25px 20px;
+    min-height: 400px;
+    margin: 20px 0;
+    /* background-color: black !important; */
+
+  }
+  
+  .login-form-container h2 {
+    font-size: 1.4rem;
+  }
+  
+  .login-form-container p {
+    font-size: 0.85rem;
+  }
+  
+  .login-form label {
+    font-size: 0.85rem;
+  }
+  
+  .login-form input {
+    padding: 8px 10px;
+    font-size: 0.85rem;
+  }
+  
+  .signup-link {
+    font-size: 0.8rem;
+  }
+}
+@media screen and (max-width: 992px){
+.signupanim{
+    display: none !important;
+  }
+.vendorsignup-content.left{
+  display: none !important;
+}
+}
+/* Homepage Responsive */
+@media screen and (max-width: 1200px) {
+  .homepage {
+    padding: 20px;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  .left-content-main p {
+    font-size: 1.3rem;
+  }
+  
+  .content-shops {
+    font-size: 2.5rem;
+  }
+  
+  .popular-shops {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .homepage {
+    flex-direction: column;
+    text-align: center;
+    padding: 15px;
+    min-height: auto;
+  }
+  
+  .left-content-main,
+  .right-content {
+    width: 100%;
+    padding: 20px;
+  }
+  
+  .left-content-main {
+    order: 2;
+  }
+  
+  .right-content {
+    order: 1;
+    margin-bottom: 30px;
+  }
+  
+  h1 {
+    font-size: 2.2rem;
+  }
+  
+  .left-content-main p {
+    font-size: 1.2rem;
+  }
+  
+  .content-shops {
+    font-size: 2.2rem;
+  }
+  
+  .content-shops ol {
+    --height: 3.2rem;
+    height: var(--height);
+    line-height: var(--height);
+  }
+  
+  .popular-shops {
+    font-size: 2.2rem;
+  }
+  
+  .homepage-service h3 {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .homepage {
+    padding: 10px;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  .left-content-main p {
+    font-size: 1.1rem;
+  }
+  
+  .content-shops {
+    font-size: 1.8rem;
+  }
+  
+  .content-shops ol {
+    --height: 2.8rem;
+    height: var(--height);
+    line-height: var(--height);
+  }
+  
+  .map-wrapper {
+    width: 85%;
+  }
+  
+  .popular-shops {
+    font-size: 1.8rem;
+  }
+  
+  .homepage-service h3 {
+    font-size: 1.6rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+  
+  .left-content-main p {
+    font-size: 1rem;
+  }
+  
+  .content-shops {
+    font-size: 1.5rem;
+  }
+  
+  .content-shops ol {
+    --height: 2.4rem;
+    height: var(--height);
+    line-height: var(--height);
+  }
+  
+  .map-wrapper {
+    width: 90%;
+    aspect-ratio: 1 / 1;
+  }
+  
+  .popular-shops {
+    font-size: 1.5rem;
+  }
+}
+
+/* Signup Choice Responsive */
+@media screen and (max-width: 768px) {
+  .signup-choice-main {
+    padding: 20px;
+  }
+  
+  .signup-choice-form {
+    width: 90%;
+    max-width: 400px;
+    padding: 30px 20px;
+  }
+  
+  .signup-btn {
+    font-size: 1.1rem;
+    padding: 10px 16px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .signup-choice-form {
+    width: 95%;
+    padding: 25px 15px;
+  }
+  
+  .signup-btn {
+    font-size: 1rem;
+    padding: 8px 14px;
+  }
+}
+
+/* User/Vendor Signup Responsive */
+@media screen and (max-width: 992px) {
+  .usersignup-main,
+  .vendorsignup-main {
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+  }
+  
+  .usersignup-content.left,
+  .vendorsignup-content.left,
+  .usersignup-content-right,
+  .vendorsignup-content-right {
+    width: 100%;
+    height: auto;
+    min-height: 50vh;
+  }
+  
+  .usersignup-content-right,
+  .vendorsignup-content-right {
+    order: 1;
+    min-height: 40vh;
+    padding: 40px 20px;
+  }
+  
+  .usersignup-content.left,
+  .vendorsignup-content.left {
+    order: 2;
+    min-height: 60vh;
+    padding: 40px 20px;
+    align-items: flex-start;
+  }
+  
+  .user-form-container,
+  .vendor-form-container {
+    margin: 0 auto;
+    max-width: 400px;
+    padding: 25px 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .usersignup-content.left,
+  .vendorsignup-content.left {
+    padding: 30px 15px;
+    min-height: auto;
+  }
+  
+  .usersignup-content-right,
+  .vendorsignup-content-right {
+    padding: 30px 15px;
+    min-height: 30vh;
+  }
+  
+  .user-form-container,
+  .vendor-form-container {
+    padding: 20px 15px;
+    max-width: 350px;
+    margin: 10px auto;
+  }
+  
+  .user-form-container h2,
+  .vendor-form-container h2 {
+    font-size: 1.6rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .user-form-container p,
+  .vendor-form-container p {
+    font-size: 0.9rem;
+    margin-bottom: 1.2rem;
+  }
+  
+  .user-form input,
+  .vendor-form input {
+    padding: 10px 12px;
+    font-size: 0.9rem;
+  }
+  
+  .create-account-btn {
+    padding: 12px;
+    font-size: 0.95rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .usersignup-main,
+  .vendorsignup-main {
+    min-height: 100vh;
+    height: auto;
+  }
+  
+  .usersignup-content.left,
+  .vendorsignup-content.left {
+    padding: 20px 15px;
+    min-height: auto;
+    align-items: center;
+  }
+  
+  .usersignup-content-right,
+  .vendorsignup-content-right {
+    padding: 20px 15px;
+    min-height: 25vh;
+  }
+  
+  .user-form-container,
+  .vendor-form-container {
+    padding: 20px 15px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  
+  .user-form-container h2,
+  .vendor-form-container h2 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .user-form-container p,
+  .vendor-form-container p {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+  }
+  
+  .user-form label,
+  .vendor-form label {
+    font-size: 0.85rem;
+  }
+  
+  .user-form input,
+  .vendor-form input {
+    padding: 10px;
+    font-size: 0.85rem;
+    margin-bottom: 0;
+  }
+  
+  .create-account-btn {
+    padding: 12px;
+    font-size: 0.9rem;
+    margin: 10px 0;
+  }
+  
+  .login-link {
+    margin-top: 10px;
+    font-size: 0.8rem;
+  }
+}
+
+/* Buttons Responsive */
+@media screen and (max-width: 768px) {
+  .login-btn,
+  .signupchoice-btn,
+  .create-account-btn {
+    padding: 10px 16px;
+    font-size: 0.95rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .login-btn,
+  .signupchoice-btn,
+  .create-account-btn {
+    padding: 8px 14px;
+    font-size: 0.9rem;
+  }
+}
+
+/* OTP Modal Responsive */
+@media screen and (max-width: 480px) {
+  .otp-modal {
+    padding: 20px 15px;
+    max-width: 280px;
+  }
+  
+  .otp-input {
+    padding: 8px 10px;
+    font-size: 0.9rem;
+  }
+  
+  .verify-btn,
+  .cancel-btn {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+  
+  .otp-timer {
+    font-size: 0.85rem;
+  }
+}
+
+/* Navigate Button Responsive */
+@media screen and (max-width: 768px) {
+  .navigate-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+    margin: 15px auto;
+  }
+  
+  .car-wrapper {
+    width: 70px;
+    height: 45px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .navigate-btn {
+    padding: 8px 16px;
+    font-size: 13px;
+    margin: 12px auto;
+  }
+  
+  .car-wrapper {
+    width: 60px;
+    height: 40px;
+  }
+}
+
+/* Mobile Hover Fixes */
+@media (hover: none) and (pointer: coarse) {
+  .service-card:hover {
+    transform: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .service-card:active {
+    transform: scale(0.98);
+  }
+  
+  .login-btn:hover,
+  .signupchoice-btn:hover,
+  .create-account-btn:hover,
+  .navigate-btn:hover {
+    transform: none;
+    box-shadow: none;
+  }
+  
+  .service-card:hover .service-icon {
+    opacity: 1;
+    transform: none;
+  }
+  
+  .service-card:hover .overlay {
+    opacity: 0;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .service-icon,
+  .service-card,
+  .login-btn,
+  .signupchoice-btn,
+  .create-account-btn,
+  .navigate-btn,
+  .back:hover .backicon {
+    animation: none;
+    transition: none;
+  }
+  
+  .service-card:hover {
+    transform: none;
+  }
+  
+  .content-shops ol li {
+    animation: none;
+  }
+  
+  .navigate-btn:hover .car-wrapper,
+  .navigate-btn:hover .dust {
+    animation: none;
+  }
+}
+
+/* Emergency overflow fixes */
+.usersignup-main *,
+.vendorsignup-main * {
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+.user-form-container,
+.vendor-form-container {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  min-height: fit-content !important;
+}
+
+.create-account-btn {
+  position: static !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* ----------------------------- Desktop form-fit tweaks ----------------------------- */
+/* Aim: keep signup/login forms fully visible on desktop heights and center artwork */
+@media screen and (min-width: 992px) {
+  :root {
+    /* fallback header height used to keep content below top nav */
+    --app-header-height: 80px;
+  }
+
+  /* Reduce exact 100vh usage and use available viewport minus header */
+  .usersignup-main,
+  .vendorsignup-main,
+  .login-main {
+    min-height: calc(100vh - var(--app-header-height));
+  }
+
+  /* Allow left artwork to shrink so the form remains visible */
+  .usersignup-content.left,
+  .vendorsignup-content.left,
+  /* .login-card-right, */
+  .login-card-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    min-height: calc(100vh - var(--app-header-height));
+    padding: 20px;
+  }
+
+  /* Make form cards constrain to viewport height and reduce internal padding */
+  .user-form-container,
+  .vendor-form-container,
+  .login-card {
+    max-height: calc(100vh - 160px);
+    width: 100%;
+    padding: 18px 18px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  /* Ensure inputs/paddings are slightly smaller on narrower desktop heights */
+  .user-form input,
+  .vendor-form input,
+  .login-form input {
+    padding: 10px 12px;
+  }
+
+  /* Scale down large illustrations/lottie animations so they don't push the form out of view */
+  /* .usersignup-content.left > *,
+  .vendorsignup-content.left > *
+  .login-card-right
+   * {
+    max-height: calc(100vh - 220px);
+    width: auto;
+    height: auto;
+  } */
+
+  /* Remove full-height forcing on login-side columns so cards can center in available space */
+  .login-card-left
+  /* .login-card-right  */
+  {
+    height: auto;
+    min-height: calc(100vh - var(--app-header-height));
+  }
+
+  /* Slightly reduce the main gradient panel padding to avoid overflow */
+  .usersignup-content-right,
+  .vendorsignup-content-right {
+    padding: 12px 20px;
+  }
+}

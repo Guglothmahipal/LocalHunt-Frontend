@@ -1,0 +1,46 @@
+name: Admin Deployment to Vercel
+
+# Trigger on push to main branch
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    # Only run if the actor is you
+    if: github.actor == 'Jaichey'
+
+    steps:
+      # Step 1: Print actor info for debugging
+      - name: Print Actor
+        run: echo "Triggered by ${{ github.actor }}"
+
+      # Step 2: Verify that the Vercel Deploy Hook secret exists
+      - name: Check Vercel Secret
+        run: |
+          echo "Checking VERCEL_DEPLOY_HOOK_URL..."
+          if [ -z "${VERCEL_DEPLOY_HOOK_URL}" ]; then
+            echo "ERROR: VERCEL_DEPLOY_HOOK_URL is empty!"
+            exit 1
+          else
+            echo "VERCEL_DEPLOY_HOOK_URL is set (length: ${#VERCEL_DEPLOY_HOOK_URL})"
+          fi
+        env:
+          VERCEL_DEPLOY_HOOK_URL: ${{ secrets.VERCEL_DEPLOY_HOOK_URL }}
+
+      # Step 3: Trigger Vercel deployment
+      - name: Trigger Vercel Deployment
+        run: |
+          echo "Triggering Vercel deployment..."
+          response=$(curl -s -o /dev/null -w "%{http_code}" -X POST -H "Content-Type: application/json" "${VERCEL_DEPLOY_HOOK_URL}")
+          echo "HTTP Response Code: $response"
+          if [ "$response" != "200" ] && [ "$response" != "201" ]; then
+            echo "Deployment failed!"
+            exit 1
+          else
+            echo "Deployment triggered successfully!"
+          fi
+        env:
+          VERCEL_DEPLOY_HOOK_URL: ${{ secrets.VERCEL_DEPLOY_HOOK_URL }}

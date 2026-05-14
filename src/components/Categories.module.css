@@ -1,0 +1,127 @@
+   /* .container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.outerCard {
+    display: flex;
+    justify-content: center;
+    /* border: 2px red solid; 
+}
+
+.innerCard {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    height: 150px;
+    /* width:100%; 
+    width: 270px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.innerCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.icon {
+    height: 52px;
+    width: 47px;
+  stroke: #fff;
+  stroke-width: 1;
+  color: #fff;
+}
+
+.cardLink {
+  text-decoration: none;
+  color: inherit;
+  display: block; 
+}
+ */
+
+ .container {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.outerCard {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;   /* allow cards to move to new row */
+  gap: 1rem;         /* spacing between cards */
+}
+
+.innerCard {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  height: 150px;
+  width: 270px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.innerCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.icon {
+  height: 52px;
+  width: 47px;
+  stroke: #fff;
+  stroke-width: 1;
+  color: #fff;  
+}
+
+.cardLink {
+  text-decoration: none;
+  color: inherit;
+  display: block; 
+}
+
+/* ==================== MEDIA QUERIES ==================== */
+
+/* Tablets (≤ 1024px) */
+@media (max-width: 1024px) {
+  .innerCard {
+    width: 220px;
+    height: 140px;
+  }
+}
+
+/* Small Tablets (≤ 768px) */
+@media (max-width: 768px) {
+  .outerCard {
+    justify-content: center;
+  }
+
+  .innerCard {
+    width: 200px;   /* two cards per row */
+    height: 130px;
+  }
+}
+
+/* Mobile Devices (≤ 480px) */
+@media (max-width: 480px) {
+  .innerCard {
+    width: 150px;   /* full width card */
+    padding: 16px;
+  }
+
+  .icon {
+    height: 40px;
+    width: 40px;
+  }
+}

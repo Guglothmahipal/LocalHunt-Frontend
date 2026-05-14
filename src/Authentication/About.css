@@ -1,0 +1,821 @@
+/* General Setup */
+.aboutus-container {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ffffff;
+    color: #333;
+    overflow-x: hidden;
+    cursor: default; /* Explicitly set default cursor */
+}
+
+.aboutus-section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.aboutus-section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+/* Color & Utility */
+.aboutus-amber-bg {
+    background-color: #FFD700;
+    color: #333;
+}
+
+.aboutus-card-text {
+    font-weight: 500;
+    color: #333;
+    font-size: 0.95rem;
+}
+
+/* CTA Buttons */
+.aboutus-cta-button {
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease-out;
+}
+
+.aboutus-primary-cta {
+    background-color: #FFD700;
+    color: #333;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+}
+
+.aboutus-primary-cta:hover {
+    background-color: #FFA500;
+    transform: translateY(-2px);
+}
+
+.aboutus-secondary-cta {
+    background-color: #FFD700;
+    color: #333;
+    padding: 15px 50px;
+    border-radius: 8px;
+}
+
+.aboutus-secondary-cta:hover {
+    background-color: #FFA500;
+}
+
+/* 1. Hero / Discovery Section */
+.aboutus-hero-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 20px;
+    min-height: 400px;
+}
+
+.aboutus-hero-content {
+    max-width: 500px;
+}
+
+.aboutus-hero-title {
+    font-size: clamp(2rem, 4.5vw, 3.5rem);
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.aboutus-hero-tagline {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.social-icon:hover {
+    background: #FFD700 !important;
+    transform: translateY(-3px);
+}
+
+/* Map Visual - Carousel Integration */
+.aboutus-map-visual {
+    width: 100%;
+    max-width: 900px;
+    height: 500px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+/* Override carousel wrapper styles for About page */
+.aboutus-map-visual .carousel-wrapper {
+    background-color: transparent !important;
+    height: 100% !important;
+    padding: 0 !important;
+    width: 100%;
+}
+
+.aboutus-map-visual .carousel-container {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* Ensure carousel fits within About page layout */
+.aboutus-map-visual .carousel-card {
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* General Card Grid Layout */
+.aboutus-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.aboutus-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.2s ease-out;
+    text-align: center;
+    /* flex-grow: 1; */
+    min-width: 150px;
+    /* min-height: auto; */
+    /* REMOVED: transform: translateZ(0) - causing cursor issues */
+}
+
+.aboutus-card:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.aboutus-icon-circle {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 10px;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+}
+
+/* 2. How It Works Section Specifics */
+.aboutus-how-it-works-grid {
+    justify-content: space-between;
+}
+
+.aboutus-how-it-works-card {
+    flex-basis: calc(25% - 15px);
+    text-align: center;
+    border: 1px solid #f0f0f0;
+}
+
+.aboutus-how-it-works-card:hover {
+    border-color: #FFD700;
+}
+
+/* 3. Popular Near You Section Specifics */
+.aboutus-popular-categories-grid {
+    justify-content: center;
+}
+
+.aboutus-category-card {
+    flex-basis: calc(25% - 30px);
+    min-width: 180px;
+    padding: 30px 15px;
+}
+
+.aboutus-category-card .aboutus-icon-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+/* 4. Top Rated Vendors Section Specifics */
+.aboutus-top-rated-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+    margin-top: 40px;
+}
+
+.aboutus-vendor-card {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    max-width: 350px;
+    text-align: left;
+    flex-shrink: 0;
+}
+
+.aboutus-vendor-image {
+    width: 60px;
+    height: 60px;
+    margin-right: 15px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.aboutus-vendor-info h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.aboutus-star-rating {
+    color: #FFD700;
+    font-size: 1rem;
+}
+
+.aboutus-vendor-category {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 5px;
+}
+
+.aboutus-small-map {
+    width: 500px;
+    height: 300px;
+    justify-content: flex-end;
+}
+
+.aboutus-small-map .aboutus-map-bg {
+    width: 80%;
+    height: 80%;
+    border-radius: 15px;
+}
+
+/* 5. Final CTA Section */
+.aboutus-final-cta-section {
+    padding: 80px 20px;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+.aboutus-final-cta-title {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* 6. Footer */
+.aboutus-footer {
+    padding: 20px 40px;
+    border-top: 1px solid #eee;
+    text-align: center;
+    color: #666;
+    font-size: 0.9rem;
+    background-color: #2c3e50;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.aboutus-copyright {
+    color: #ccc;
+    margin-top: 10px;
+}
+
+.aboutus-social-icons-bar {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.aboutus-social-icon-link {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #666;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.aboutus-social-icon-link:hover {
+    background-color: #FFD700;
+    color: #333;
+    transform: translateY(-2px);
+}
+
+/* --- NEW INTRO HEADING STYLES --- */
+.aboutus-intro-heading-container {
+    padding: 20px 20px 0;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.aboutus-intro-heading {
+    margin-bottom: 0;
+    text-align: center;
+    padding-top: 40px;
+    font-size: clamp(2rem, 4.5vw, 3.5rem);
+    font-weight: 900;
+    line-height: 1.2;
+}
+
+/* --- Section Background Colors --- */
+.aboutus-features-section {
+    background-color: #ffffff;
+}
+
+.aboutus-team-section {
+    background-color: #000000;
+}
+
+.aboutus-team-title {
+    color: #FFFFFF !important;
+}
+
+/* --- Team Section Styles --- */
+.aboutus-team-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+/* --- Individual Team Member Card (The Pill) --- */
+.aboutus-team-member-card {
+    width: 200px;
+    min-height: 350px;
+    border-radius: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    padding: 0;
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+    /* REMOVED: transform: translateZ(0) and backface-visibility - causing cursor issues */
+    cursor: pointer; /* Explicit cursor for clickable elements */
+}
+
+/* Hover effect */
+.aboutus-team-member-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* --- Text Container (Top half of the pill) --- */
+.aboutus-member-text-container {
+    padding: 30px 20px 10px;
+    text-align: center;
+    flex-shrink: 0;
+    z-index: 2;
+    width: 100%;
+}
+
+.aboutus-member-name {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin: 0 0 5px 0;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+.aboutus-member-role {
+    font-size: 0.9rem;
+    font-weight: 400;
+    opacity: 0.8;
+    margin: 0;
+}
+
+/* --- Image Styling (Bottom half of the pill) --- */
+.aboutus-member-image {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 100%;
+    height: 60%;
+    object-fit: cover;
+    filter: grayscale(100%);
+    border-radius: 0 0 100px 100px;
+}
+
+/* Emoji placeholder styling */
+.aboutus-member-emoji {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 60px;
+    z-index: 2;
+}
+
+/* --- New Features Section Layout --- */
+.centered-title {
+  text-align: center;
+  font-size: 2.3rem;
+  margin-bottom: 60px;
+  font-weight: 800;
+  color: #222;
+}
+
+.aboutus-features-container {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.aboutus-feature-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 35px 30px;
+  border-radius: 18px;
+  background: #fffef5;
+  box-shadow: 0 5px 20px rgba(255, 213, 0, 0.15);
+  transition: all 0.2s ease-out;
+  /* REMOVED: transform: translateZ(0), backface-visibility, will-change - causing cursor issues */
+  cursor: pointer; /* Explicit cursor for clickable elements */
+}
+
+.aboutus-feature-row.reverse {
+  flex-direction: row-reverse;
+}
+
+.aboutus-feature-row:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+}
+
+.aboutus-feature-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 35px;
+  box-shadow: 0 4px 15px rgba(255, 213, 0, 0.3);
+  flex-shrink: 0;
+  /* REMOVED: transform: translateZ(0) - causing cursor issues */
+}
+
+.aboutus-feature-text {
+  text-align: left;
+  max-width: 600px;
+}
+
+.aboutus-feature-text h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.aboutus-feature-text p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 1200px) {
+    .aboutus-hero-section {
+        padding: 60px 20px;
+    }
+    
+    .aboutus-map-visual {
+        max-width: 700px;
+        height: 420px;
+    }
+}
+
+@media (max-width: 992px) {
+    .aboutus-hero-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    .aboutus-hero-content {
+        margin-bottom: 40px;
+        max-width: 100%;
+    }
+
+    .aboutus-hero-title {
+        text-align: center;
+    }
+
+    .aboutus-map-visual {
+        max-width: 600px;
+        height: 380px;
+    }
+
+    .aboutus-section-title {
+        text-align: center;
+    }
+
+    .aboutus-how-it-works-grid {
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .aboutus-how-it-works-card {
+        flex-basis: 45%;
+    }
+
+    .aboutus-top-rated-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .aboutus-small-map {
+        order: 1;
+        max-width: 400px;
+        width: 90%;
+        height: 250px;
+        justify-content: center;
+    }
+
+    .aboutus-vendor-card {
+        order: 2;
+        max-width: 90%;
+    }
+
+    .aboutus-popular-categories-grid {
+        justify-content: space-around;
+        gap: 20px;
+    }
+    
+    .aboutus-team-member-card {
+        width: 180px;
+        min-height: 320px;
+    }
+
+    /* Features responsive */
+    .aboutus-feature-row,
+    .aboutus-feature-row.reverse {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 20px;
+        gap: 25px;
+    }
+
+    .aboutus-feature-icon {
+        margin-bottom: 0;
+    }
+
+    .aboutus-feature-text {
+        text-align: center;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .aboutus-how-it-works-card {
+        flex-basis: 100%;
+    }
+
+    .aboutus-category-card {
+        flex-basis: 45%;
+        min-width: unset;
+    }
+    
+    .aboutus-map-visual {
+        max-width: 500px;
+        height: 320px;
+    }
+    
+    .aboutus-team-member-card {
+        width: 160px;
+        min-height: 300px;
+    }
+    
+    .aboutus-member-name {
+        font-size: 1rem;
+    }
+    
+    .aboutus-member-role {
+        font-size: 0.8rem;
+    }
+
+    .centered-title {
+        font-size: 2rem;
+        margin-bottom: 40px;
+    }
+
+    .aboutus-features-container {
+        gap: 40px;
+    }
+
+    .aboutus-feature-row {
+        padding: 25px 20px;
+    }
+
+    .aboutus-feature-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 30px;
+    }
+
+    .aboutus-feature-text h3 {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .aboutus-section {
+        padding: 40px 15px;
+    }
+    
+    .aboutus-hero-section {
+        padding: 30px 15px;
+    }
+    
+    .aboutus-map-visual {
+        max-width: 320px;
+        height: 250px;
+        margin-top: 20px;
+    }
+    
+    .aboutus-team-grid {
+        gap: 20px;
+    }
+    
+    .aboutus-team-member-card {
+        width: 140px;
+        min-height: 260px;
+        border-radius: 70px;
+    }
+    
+    .aboutus-member-text-container {
+        padding: 20px 15px 10px;
+    }
+    
+    .aboutus-member-name {
+        font-size: 0.9rem;
+    }
+    
+    .aboutus-member-role {
+        font-size: 0.75rem;
+    }
+    
+    .aboutus-member-emoji {
+        font-size: 50px;
+        bottom: 20px;
+    }
+    
+    .aboutus-final-cta-section {
+        padding: 60px 15px;
+    }
+    
+    .aboutus-secondary-cta {
+        padding: 12px 30px;
+        font-size: 0.9rem;
+    }
+
+    .centered-title {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+
+    .aboutus-features-container {
+        gap: 30px;
+    }
+
+    .aboutus-feature-row {
+        padding: 20px 15px;
+        gap: 20px;
+    }
+
+    .aboutus-feature-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 25px;
+    }
+
+    .aboutus-feature-text h3 {
+        font-size: 1.2rem;
+    }
+
+    .aboutus-feature-text p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Hide scrollbar for all elements */
+* {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+*::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+/* Media containers for videos and Lottie animations */
+.aboutus-media-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  overflow: hidden;
+  max-width: 500px;
+  height: 300px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.aboutus-feature-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.aboutus-lottie-animation {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 12px;
+}
+
+.aboutus-lottie-placeholder {
+  text-align: center;
+  color: white;
+  font-weight: bold;
+}
+
+.aboutus-lottie-placeholder small {
+  display: block;
+  margin-top: 8px;
+  opacity: 0.8;
+  font-size: 0.8rem;
+}
+
+.aboutus-feature-row {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 80px;
+}
+
+.aboutus-feature-row.reverse {
+  flex-direction: row-reverse;
+}
+
+.aboutus-feature-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.aboutus-feature-media {
+  flex: 1;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .aboutus-feature-row {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .aboutus-feature-row.reverse {
+    flex-direction: column;
+  }
+  
+  .aboutus-media-container {
+    max-width: 100%;
+    height: 250px;
+  }
+  
+  .aboutus-feature-content {
+    align-items: center;
+    text-align: center;
+  }
+}

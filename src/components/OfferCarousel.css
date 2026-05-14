@@ -1,0 +1,304 @@
+/* -----------------------------------
+   Base Styles (Desktop Default)
+----------------------------------- */
+.carousel-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 800px; 
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.cards-wrapper {
+  position: relative;
+  width: 500px; 
+  height: 220px; 
+  perspective: 1200px;
+  transform-style: preserve-3d;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px; 
+}
+
+.offer-card {
+  position: absolute;
+  width: 350px; 
+  height: 210px; 
+  border-radius: 8px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.7s ease;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  overflow: hidden; 
+}
+
+.card-offer-title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 14px 18px; 
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+  color: #FFFFFF; 
+  font-size: 1.4rem; 
+  font-weight: 600;
+  box-sizing: border-box; 
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* --- Transform States --- */
+.offer-card.center {
+  z-index: 10;
+  transform: translateX(75px) translateZ(150px) rotateY(0deg) scale(1); 
+  opacity: 1;
+}
+
+.offer-card.right {
+  z-index: 5;
+  transform: translateX(280px) translateZ(0px) rotateY(-30deg) scale(0.85);
+  opacity: 0.6;
+}
+
+.offer-card.left {
+  z-index: 5;
+  transform: translateX(-180px) translateZ(0px) rotateY(30deg) scale(0.85);
+  opacity: 0.6;
+}
+
+.offer-card.hidden {
+  z-index: 1;
+  transform: translateX(75px) translateZ(-500px) scale(0.5); 
+  opacity: 0;
+}
+
+/* --- Navigation --- */
+.navigation-controls {
+  margin-top: 20px; 
+  display: flex;
+  justify-content: center;
+}
+
+.nav-button {
+  padding: 10px 20px;
+  margin: 0 15px;
+  border: none;
+  background-color: #ffc908;
+  color: #000;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nav-button:hover {
+  background-color: #f8ba0e;
+  color: #fff;
+  transform: scale(1.02);
+}
+
+/* --- Shop Logo --- */
+.shop-logo-container {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  z-index: 12;
+  cursor: pointer;
+  border-radius: 50%; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); 
+  transition: transform 0.2s;
+}
+
+.shop-logo-container:hover {
+  transform: scale(1.05);
+}
+
+.shop-logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover; 
+  border: 3px solid #FFFFFF;
+  display: block;
+}
+
+
+/* =========================================================
+   📱 RESPONSIVE DESIGN
+========================================================= */
+
+/* --- Medium Screens (Tablets: 768px - 1024px) --- */
+@media (max-width: 1024px) {
+  .cards-wrapper {
+    width: 400px;
+    height: 200px;
+    perspective: 1000px;
+  }
+
+  .offer-card {
+    width: 300px;
+    height: 180px;
+  }
+
+  .offer-card.center {
+    transform: translateX(50px) translateZ(120px) rotateY(0deg) scale(1);
+  }
+
+  .offer-card.left {
+    transform: translateX(-150px) translateZ(0px) rotateY(25deg) scale(0.85);
+  }
+
+  .offer-card.right {
+    transform: translateX(220px) translateZ(0px) rotateY(-25deg) scale(0.85);
+  }
+
+  .card-offer-title {
+    font-size: 1.2rem;
+    padding: 12px 16px;
+  }
+
+  .shop-logo {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+/* --- Small Screens (Mobiles: up to 767px) --- */
+@media (max-width: 767px) {
+  .carousel-container {
+    width: 100%;
+    padding: 8px 0;
+  }
+
+  .cards-wrapper {
+    width: 95%; 
+    max-width: 360px;
+    height: 170px;
+    perspective: 700px;
+    margin: 0 auto;
+  }
+
+  .offer-card {
+    width: 100%;
+    max-width: 340px;
+    height: 160px;
+    border-radius: 10px;
+  }
+
+  .offer-card.center {
+    transform: translateX(0) translateZ(90px) rotateY(0deg) scale(1);
+  }
+
+  .offer-card.left {
+    transform: translateX(-60px) translateZ(0px) rotateY(18deg) scale(0.9);
+  }
+
+  .offer-card.right {
+    transform: translateX(60px) translateZ(0px) rotateY(-18deg) scale(0.9);
+  }
+
+  .card-offer-title {
+    font-size: 0.95rem;
+    padding: 10px 12px;
+  }
+
+  .nav-button {
+    padding: 8px 14px;
+    margin: 0 6px;
+    font-size: 0.85rem;
+    border-radius: 4px;
+  }
+
+  .shop-logo-container {
+    top: 10px;
+    left: 10px;
+  }
+
+  .shop-logo {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+/* --- Extra Small Screens (below 480px) --- */
+@media (max-width: 480px) {
+  .cards-wrapper {
+    width: 100%;
+    max-width: 310px;
+    height: 150px;
+    perspective: 600px;
+  }
+
+  .offer-card {
+    width: 100%;
+    max-width: 300px;
+    height: 145px;
+  }
+
+  .offer-card.center {
+    transform: translateX(0px) translateZ(70px) rotateY(0deg) scale(1);
+  }
+
+  .offer-card.left {
+    transform: translateX(-45px) translateZ(0px) rotateY(15deg) scale(0.88);
+  }
+
+  .offer-card.right {
+    transform: translateX(45px) translateZ(0px) rotateY(-15deg) scale(0.88);
+  }
+
+  .card-offer-title {
+    font-size: 0.85rem;
+    padding: 8px 10px;
+  }
+
+  .nav-button {
+    padding: 6px 12px;
+    margin: 0 5px;
+    font-size: 0.8rem;
+  }
+
+  .shop-logo-container {
+    top: 8px;
+    left: 8px;
+  }
+
+  .shop-logo {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+/* --- Ultra Small Devices (below 360px, e.g., older phones) --- */
+@media (max-width: 360px) {
+  .cards-wrapper {
+    height: 130px;
+    perspective: 500px;
+  }
+
+  .offer-card {
+    max-width: 270px;
+    height: 130px;
+  }
+
+  .card-offer-title {
+    font-size: 0.75rem;
+  }
+
+  .nav-button {
+    padding: 5px 10px;
+    font-size: 0.75rem;
+  }
+
+  .shop-logo {
+    width: 28px;
+    height: 28px;
+  }
+}

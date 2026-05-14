@@ -1,0 +1,437 @@
+.tagsWrapper {
+  margin-top: 1.5em;
+  padding: 1em 0;
+  width: 100%;
+}
+
+.tagsHeading {
+  font-weight: bold;
+  margin-bottom: 0.5em;
+  color: #ffc908;
+  font-size: 1.15em;
+}
+
+.tagsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7em 1em;
+  margin-bottom: 1em;
+}
+
+.tag {
+  background-color: #fff6c2;
+  border-radius: 5px;
+  padding: 0.4em 1em;
+  font-size: 0.6em;
+  border: 1.2px solid #ffc908;
+  color: #473700;
+  word-break: break-word;
+}
+
+.addTagRow {
+  display: flex;
+  gap: 0.5em;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.tagInput {
+  padding: 0.5em 1em;
+  border: 1px solid #ffc908;
+  border-radius: 20px;
+  outline: none;
+  font-size: 0.7em;
+  min-width: 150px;
+  flex: 1;
+}
+
+.addTagBtn {
+  background: #ffc908;
+  font-size: 0.7em;
+  border: none;
+  color: #473700;
+  padding: 0.5em 1.3em;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+
+.addTagBtn:disabled {
+  background: #ffe389;
+  cursor: not-allowed;
+}
+
+.infoCardsRow {
+  display: flex;
+  gap: 32px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+.infoCard {
+  background: #fffde8;
+  border-radius: 18px;
+  box-shadow: 0 1px 20px 0 rgba(51,51,51,0.08);
+  padding: 36px 28px;
+  min-width: 340px;
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1;
+}
+
+.tagsHeading {
+  font-weight: 700;
+  color: #ffc908;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.descriptionRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-top: 10px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.descriptionInput {
+  flex: 1;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1.5px solid #fff2b8;
+  font-size: 1.1rem;
+  outline: none;
+  background: #fff;
+  min-width: 200px;
+}
+
+.addDescBtn {
+  background-color: #ffc908;
+  border: none;
+  border-radius: 8px;
+  padding: 11px 22px;
+  color: #473700;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 1.05rem;
+  margin-left: 6px;
+  transition: background-color 0.2s;
+  white-space: nowrap;
+}
+
+.addDescBtn:disabled {
+  background: #ece2c1;
+  cursor: not-allowed;
+}
+
+.cardsRow {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.descInput {
+  width: 450px;
+  height: 100px;
+  padding: 0.5em 1em;
+  border: 1px solid #ffc908;
+  border-radius: 20px;
+  outline: none;
+  font-size: 0.7em;
+  resize: vertical;
+  min-height: 80px;
+  max-width: 100%;
+}
+
+/* === RESPONSIVE MEDIA QUERIES === */
+
+/* Large screens (1200px and above) */
+@media (min-width: 1200px) {
+  .infoCardsRow {
+    gap: 40px;
+  }
+  
+  .infoCard {
+    min-width: 380px;
+    max-width: 480px;
+    padding: 40px 32px;
+  }
+  
+  .descInput {
+    width: 500px;
+    height: 120px;
+  }
+}
+
+/* Medium screens (1024px and below) */
+@media (max-width: 1024px) {
+  .infoCardsRow {
+    gap: 24px;
+  }
+  
+  .infoCard {
+    min-width: 300px;
+    max-width: 380px;
+    padding: 30px 24px;
+  }
+  
+  .tagsHeading {
+    font-size: 1.8rem;
+  }
+  
+  .descInput {
+    width: 400px;
+    height: 90px;
+  }
+  
+  .descriptionInput {
+    font-size: 1rem;
+  }
+  
+  .addDescBtn {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+}
+
+/* Tablets (768px and below) */
+@media (max-width: 768px) {
+  .tagsWrapper {
+    padding: 0.8em 0;
+  }
+  
+  .infoCardsRow {
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  .infoCard {
+    min-width: auto;
+    max-width: 100%;
+    padding: 24px 20px;
+    width: 100%;
+  }
+  
+  .cardsRow {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .tagsHeading {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  
+  .descriptionRow {
+    flex-direction: column;
+    gap: 12px;
+    align-items: stretch;
+  }
+  
+  .descriptionInput {
+    min-width: auto;
+    width: 100%;
+    font-size: 1rem;
+  }
+  
+  .addDescBtn {
+    margin-left: 0;
+    width: 100%;
+    padding: 12px 20px;
+  }
+  
+  .descInput {
+    width: 100%;
+    height: 100px;
+    font-size: 0.8em;
+    padding: 12px 16px;
+  }
+  
+  .addTagRow {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  
+  .tagInput {
+    min-width: auto;
+    width: 100%;
+    padding: 10px 14px;
+    font-size: 0.8em;
+  }
+  
+  .addTagBtn {
+    width: 100%;
+    padding: 10px 14px;
+    font-size: 0.8em;
+  }
+  
+  .tagsList {
+    gap: 0.5em 0.8em;
+    justify-content: center;
+  }
+  
+  .tag {
+    font-size: 0.7em;
+    padding: 0.5em 1em;
+  }
+}
+
+/* Mobile devices (600px and below) */
+@media (max-width: 600px) {
+  .tagsWrapper {
+    margin-top: 1em;
+    padding: 0.5em 0;
+  }
+  
+  .infoCard {
+    padding: 20px 16px;
+    border-radius: 14px;
+  }
+  
+  .tagsHeading {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+  }
+  
+  .descInput {
+    height: 90px;
+    font-size: 0.85em;
+    padding: 10px 14px;
+    border-radius: 16px;
+  }
+  
+  .descriptionInput {
+    padding: 8px 12px;
+    font-size: 0.95rem;
+  }
+  
+  .addDescBtn {
+    padding: 10px 18px;
+    font-size: 0.95rem;
+  }
+  
+  .tag {
+    font-size: 0.75em;
+    padding: 0.6em 1.2em;
+  }
+  
+  .tagsList {
+    gap: 0.4em 0.6em;
+  }
+}
+
+/* Small mobile devices (480px and below) */
+@media (max-width: 480px) {
+  .infoCardsRow {
+    gap: 16px;
+    margin-top: 16px;
+  }
+  
+  .infoCard {
+    padding: 18px 14px;
+    border-radius: 12px;
+  }
+  
+  .tagsHeading {
+    font-size: 1.3rem;
+  }
+  
+  .descInput {
+    height: 80px;
+    font-size: 0.8em;
+    padding: 8px 12px;
+    border-radius: 14px;
+  }
+  
+  .descriptionInput {
+    font-size: 0.9rem;
+  }
+  
+  .addDescBtn {
+    font-size: 0.9rem;
+    padding: 9px 16px;
+  }
+  
+  .tagInput {
+    padding: 8px 12px;
+    font-size: 0.75em;
+  }
+  
+  .addTagBtn {
+    padding: 8px 12px;
+    font-size: 0.75em;
+  }
+  
+  .tag {
+    font-size: 0.7em;
+    padding: 0.5em 1em;
+  }
+}
+
+/* Very small mobile devices (360px and below) */
+@media (max-width: 360px) {
+  .infoCard {
+    padding: 16px 12px;
+  }
+  
+  .tagsHeading {
+    font-size: 1.2rem;
+  }
+  
+  .descInput {
+    height: 70px;
+    font-size: 0.75em;
+  }
+  
+  .descriptionInput {
+    font-size: 0.85rem;
+  }
+  
+  .addDescBtn {
+    font-size: 0.85rem;
+    padding: 8px 14px;
+  }
+  
+  .tagsList {
+    gap: 0.3em 0.5em;
+  }
+  
+  .tag {
+    font-size: 0.65em;
+    padding: 0.4em 0.8em;
+  }
+}
+
+/* Orientation-specific adjustments for tablets */
+@media (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {
+  .infoCardsRow {
+    flex-direction: row;
+  }
+  
+  .infoCard {
+    flex: 1;
+    min-width: calc(50% - 16px);
+  }
+  
+  .cardsRow {
+    flex-direction: row;
+  }
+}
+
+/* High-density screens */
+@media (min-resolution: 192dpi) {
+  .infoCard {
+    box-shadow: 0 1px 15px 0 rgba(51,51,51,0.06);
+  }
+}

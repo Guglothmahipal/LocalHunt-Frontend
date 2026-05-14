@@ -1,0 +1,518 @@
+/* Feedback Modal Styles */
+.feedback-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  padding: 20px;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.feedback-modal-container {
+  width: 100%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.feedback-modal-content {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  animation: slideUp 0.3s ease-out;
+}
+
+.feedback-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px;
+  border-bottom: 1px solid #e5e7eb;
+  background: #f8fafc;
+}
+
+.feedback-modal-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0;
+}
+
+.feedback-close-button {
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+  color: #6b7280;
+}
+
+.feedback-close-button:hover {
+  background-color: #f3f4f6;
+  color: #374151;
+}
+
+.close-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.feedback-form {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Vendor Info */
+.vendor-info {
+  text-align: center;
+  padding: 16px;
+  background: #f8fafc;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+}
+
+.vendor-label {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin: 0 0 4px 0;
+}
+
+.vendor-name {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0;
+}
+
+/* Rating Section */
+.rating-section {
+  text-align: center;
+}
+
+.rating-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 16px;
+}
+
+.stars-container {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.feedback-star {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  fill: #d1d5db;
+}
+
+.feedback-star.filled {
+  fill: #fbbf24;
+}
+
+.feedback-star:hover {
+  transform: scale(1.1);
+}
+
+.rating-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: #6b7280;
+  margin-top: 8px;
+}
+
+.rating-label-min,
+.rating-label-max {
+  font-size: 0.75rem;
+}
+
+/* Comment Section */
+.comment-section {
+  text-align: left;
+}
+
+.comment-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 8px;
+}
+
+.comment-textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  resize: vertical;
+  min-height: 100px;
+  transition: border-color 0.2s;
+  font-family: inherit;
+}
+
+.comment-textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.character-count {
+  text-align: right;
+  font-size: 0.75rem;
+  color: #6b7280;
+  margin-top: 4px;
+}
+
+/* Anonymous Section */
+.anonymous-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.anonymous-checkbox {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  border: 1px solid #d1d5db;
+  cursor: pointer;
+}
+
+.anonymous-label {
+  font-size: 0.875rem;
+  color: #374151;
+  cursor: pointer;
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.cancel-button,
+.submit-button {
+  flex: 1;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+}
+
+.cancel-button {
+  background: white;
+  color: #374151;
+  border: 1px solid #d1d5db;
+}
+
+.cancel-button:hover:not(:disabled) {
+  background: #f9fafb;
+  border-color: #9ca3af;
+}
+
+.cancel-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.submit-button {
+  background: #ffc908;
+  color: black;
+}
+
+.submit-button:hover:not(:disabled) {
+  background: #eab308;
+  transform: translateY(-1px);
+}
+
+.submit-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.button-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  animation: spin 1s linear infinite;
+}
+
+/* Toast Notifications */
+.feedback-toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 10001;
+  max-width: 400px;
+  animation: slideInRight 0.3s ease-out;
+  border-left: 4px solid;
+}
+
+.feedback-toast.success {
+  border-left-color: #10b981;
+}
+
+.feedback-toast.error {
+  border-left-color: #ef4444;
+}
+
+.feedback-toast.hide {
+  animation: slideOutRight 0.3s ease-in;
+}
+
+.toast-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+}
+
+.toast-icon {
+  font-size: 1.25rem;
+}
+
+.toast-message {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+.toast-close {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  color: #6b7280;
+  padding: 4px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.toast-close:hover {
+  background-color: #f3f4f6;
+  color: #374151;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOutRight {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .feedback-modal-overlay {
+    padding: 16px;
+  }
+  
+  .feedback-modal-container {
+    max-height: 95vh;
+  }
+  
+  .feedback-modal-header {
+    padding: 20px;
+  }
+  
+  .feedback-modal-title {
+    font-size: 1.25rem;
+  }
+  
+  .feedback-form {
+    padding: 20px;
+    gap: 20px;
+  }
+  
+  .feedback-star {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .action-buttons {
+    flex-direction: column;
+  }
+  
+  .vendor-info {
+    padding: 12px;
+  }
+  
+  .vendor-name {
+    font-size: 1rem;
+  }
+  
+  .feedback-toast {
+    top: 10px;
+    right: 10px;
+    left: 10px;
+    max-width: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .feedback-modal-header {
+    padding: 16px;
+  }
+  
+  .feedback-form {
+    padding: 16px;
+    gap: 16px;
+  }
+  
+  .stars-container {
+    gap: 4px;
+  }
+  
+  .feedback-star {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .cancel-button,
+  .submit-button {
+    padding: 10px 16px;
+    font-size: 0.8rem;
+  }
+}
+
+/* High contrast support */
+@media (prefers-contrast: high) {
+  .feedback-modal-content {
+    border: 2px solid #000;
+  }
+  
+  .feedback-star {
+    stroke: #000;
+    stroke-width: 1px;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .feedback-star,
+  .cancel-button,
+  .submit-button,
+  .feedback-toast {
+    transition: none;
+    animation: none;
+  }
+}
+
+.anonymous-hint {
+  display: block;
+  font-size: 0.75rem;
+  color: #6b7280;
+  margin-top: 2px;
+  font-weight: normal;
+}
+
+/* User Status Info */
+.user-status-info {
+  padding: 8px 12px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  font-size: 0.875rem;
+}
+
+.user-status-logged-in {
+  background: #d1fae5;
+  color: #065f46;
+  padding: 8px 12px;
+  border-radius: 6px;
+  margin: 0;
+  font-weight: 500;
+}
+
+.user-status-logged-out {
+  background: #fef3c7;
+  color: #92400e;
+  padding: 8px 12px;
+  border-radius: 6px;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Disabled states */
+.comment-textarea:disabled {
+  background-color: #f9fafb;
+  color: #6b7280;
+  cursor: not-allowed;
+}
+
+.anonymous-checkbox:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}

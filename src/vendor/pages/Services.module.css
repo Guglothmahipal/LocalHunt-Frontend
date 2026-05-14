@@ -1,0 +1,578 @@
+.inventoryContainer {
+  padding: 20px;
+  /* background-color: #fff9e6; */
+  min-height: 100vh;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+.inventoryContainer::-webkit-scrollbar {
+  display: none;
+}
+
+/* Header */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 30px;
+  gap: 15px;
+}
+.loadingText {
+  /* text-align: center; */
+  /* color: #777; */
+  /* margin-top: 100px; */
+  /* font-size: 0.5rem; */
+  /* padding: 0 20px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.title {
+  color: #444;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.addForm {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.addForm input[type="text"] {
+  padding: 10px 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  flex: 1;
+  min-width: 150px;
+}
+
+.addForm input[type="file"] {
+  background-color: white;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  padding: 8px;
+  flex: 1;
+  min-width: 150px;
+}
+
+.addBtn {
+  background-color: #ffc908;
+  border: none;
+  color: #000;
+  padding: 10px 20px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  flex-shrink: 0;
+}
+.addBtn:hover {
+  background-color: #ffdb4d;
+}
+
+/* Empty state */
+.emptyState {
+  text-align: center;
+  color: #555;
+  margin-top: 100px;
+  padding: 0 20px;
+}
+
+.emptyState h2 {
+  font-size: 1.5rem;
+  margin-top: 15px;
+  color: #333;
+}
+
+.emptyState p {
+  color: #666;
+}
+
+.emptyImage {
+  width: 190px;
+  opacity: 0.8;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  justify-content: center; /* keeps center alignment when few items */
+  padding: 0 10px;
+}
+
+/* Item Card */
+.card {
+  width: 220px;
+  height: 280px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  margin: auto; /* centers single cards */
+  transition: transform 0.3s ease;
+  padding-bottom: 15px;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.cardContent {
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+}
+
+.cardContent h4 {
+  margin-bottom: 8px;
+  color: #444;
+  font-size: 1rem;
+  word-wrap: break-word;
+  padding: 0 5px;
+}
+
+.avatar {
+  height: 110px;
+  width: 110px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-top: 15px;
+}
+
+.removeBtn {
+  background-color: #ff4d4f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+.removeBtn:hover {
+  background-color: #e64547;
+}
+
+/* Loading text */
+.loadingText {
+  text-align: center;
+  color: #777;
+  margin-top: 100px;
+  font-size: 1.1rem;
+  padding: 0 20px;
+}
+
+.filterDropdown {
+  margin-left: 12px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  width: 400px;
+  max-width: 100%;
+}
+
+.filterDropdown:hover {
+  border-color: #1a73e8;
+}
+
+/* === RESPONSIVE MEDIA QUERIES === */
+
+/* Large screens (1200px and above) */
+@media (min-width: 1200px) {
+  .inventoryContainer {
+    padding: 25px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+  }
+  
+  .card {
+    width: 250px;
+    height: 300px;
+  }
+  
+  .avatar {
+    height: 130px;
+    width: 130px;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+  
+  .emptyImage {
+    width: 220px;
+  }
+}
+
+/* Medium screens (1024px and below) */
+@media (max-width: 1024px) {
+  .inventoryContainer {
+    padding: 18px;
+  }
+  
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 18px;
+  }
+  
+  .card {
+    width: 200px;
+    height: 260px;
+  }
+  
+  .avatar {
+    height: 100px;
+    width: 100px;
+  }
+  
+  .filterDropdown {
+    width: 300px;
+  }
+  
+  .emptyImage {
+    width: 170px;
+  }
+  
+  .header {
+    margin-bottom: 25px;
+  }
+}
+
+/* Tablets (768px and below) */
+@media (max-width: 768px) {
+  .inventoryContainer {
+    padding: 15px;
+  }
+  
+  .header {
+    margin-bottom: 20px;
+    gap: 12px;
+    align-items: center;
+  }
+  
+  .title {
+    font-size: 1.6rem;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .addForm {
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    max-width: 600px;
+  }
+  
+  .addForm input[type="text"],
+  .addForm input[type="file"] {
+    min-width: 120px;
+    padding: 8px 12px;
+  }
+  
+  .addBtn {
+    padding: 8px 16px;
+  }
+  
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 15px;
+    padding: 0 5px;
+  }
+  
+  .card {
+    width: 160px;
+    height: 220px;
+  }
+  
+  .avatar {
+    height: 80px;
+    width: 80px;
+    margin-top: 12px;
+  }
+  
+  .cardContent {
+    padding: 8px;
+  }
+  
+  .cardContent h4 {
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+  }
+  
+  .filterDropdown {
+    width: 250px;
+    margin-left: 0;
+    margin-top: 10px;
+  }
+  
+  .emptyState {
+    margin-top: 80px;
+  }
+  
+  .emptyState h2 {
+    font-size: 1.3rem;
+  }
+  
+  .emptyImage {
+    width: 150px;
+  }
+  
+  .loadingText {
+    margin-top: 80px;
+  }
+}
+
+/* Mobile devices (600px and below) */
+@media (max-width: 600px) {
+  .inventoryContainer {
+    padding: 12px;
+  }
+  
+  .header {
+    margin-bottom: 15px;
+    gap: 10px;
+  }
+  
+  .title {
+    font-size: 1.4rem;
+  }
+  
+  .addForm {
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .addForm input[type="text"],
+  .addForm input[type="file"],
+  .addBtn {
+    width: 100%;
+    min-width: auto;
+  }
+  
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 12px;
+    padding: 0;
+  }
+  
+  .card {
+    width: 140px;
+    height: 200px;
+  }
+  
+  .avatar {
+    height: 70px;
+    width: 70px;
+    margin-top: 10px;
+  }
+  
+  .cardContent {
+    padding: 6px;
+  }
+  
+  .cardContent h4 {
+    font-size: 0.85rem;
+  }
+  
+  .removeBtn {
+    padding: 5px 10px;
+    font-size: 0.85rem;
+  }
+  
+  .filterDropdown {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .emptyState {
+    margin-top: 60px;
+  }
+  
+  .emptyState h2 {
+    font-size: 1.2rem;
+  }
+  
+  .emptyState p {
+    font-size: 0.9rem;
+  }
+  
+  .emptyImage {
+    width: 130px;
+  }
+}
+
+/* Small mobile devices (480px and below) */
+@media (max-width: 480px) {
+  .inventoryContainer {
+    padding: 10px;
+  }
+  
+  .header {
+    margin-bottom: 12px;
+  }
+  
+  .title {
+    font-size: 1.3rem;
+  }
+  
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 10px;
+  }
+  
+  .card {
+    width: 130px;
+    height: 190px;
+  }
+  
+  .avatar {
+    height: 65px;
+    width: 65px;
+    margin-top: 8px;
+  }
+  
+  .cardContent h4 {
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+  }
+  
+  .emptyState {
+    margin-top: 50px;
+  }
+  
+  .emptyState h2 {
+    font-size: 1.1rem;
+    margin-top: 10px;
+  }
+  
+  .emptyImage {
+    width: 110px;
+  }
+  
+  .loadingText {
+    margin-top: 80px;
+    font-size: 1rem;
+  }
+}
+
+/* Very small mobile devices (360px and below) */
+@media (max-width: 360px) {
+  .inventoryContainer {
+    padding: 8px;
+  }
+  
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 8px;
+  }
+  
+  .card {
+    width: 120px;
+    height: 180px;
+  }
+  
+  .avatar {
+    height: 60px;
+    width: 60px;
+  }
+  
+  .cardContent {
+    padding: 5px;
+  }
+  
+  .cardContent h4 {
+    font-size: 0.75rem;
+  }
+  
+  .header {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  .addForm {
+    gap: 6px;
+  }
+  
+  .addForm input[type="text"],
+  .addForm input[type="file"] {
+    padding: 6px 10px;
+  }
+  
+  .addBtn {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
+  
+  .emptyImage {
+    width: 100px;
+  }
+}
+
+/* Orientation-specific adjustments */
+@media (max-width: 768px) and (orientation: landscape) {
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+  
+  .card {
+    width: 150px;
+    height: 200px;
+  }
+  
+  .avatar {
+    height: 70px;
+    width: 70px;
+  }
+}
+
+/* High-density screens */
+@media (min-resolution: 192dpi) {
+  .card {
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Print styles */
+@media print {
+  .inventoryContainer {
+    padding: 0;
+    background-color: white;
+  }
+  
+  .addForm,
+  .removeBtn,
+  .filterDropdown {
+    display: none;
+  }
+  
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+  }
+  
+  .card {
+    box-shadow: none;
+    border: 1px solid #ddd;
+    break-inside: avoid;
+  }
+}

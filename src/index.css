@@ -1,0 +1,30 @@
+ *{
+  margin: 0;
+  padding: 0;
+  /* font-family: system-ui, Avenir, Helvetica, Arial, sans-serif; */
+   font-family: ui-sans-serif,system-ui,sans-serif,"Apple Color Emoji","Segoe UI Emoji",Segoe UI Symbol,"Noto Color Emoji";
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+} 
+/*
+body {
+  margin: 0;
+  padding: 0;
+  /* Yellow gradient */
+  /* background: linear-gradient(to right, #ffe259, #ffa751); */
+  /* background: linear-gradient(to right, #fceabb, #f8b500); */
+  /* background: linear-gradient(to right, #ffefba, #ffc300); */
+  /* background: linear-gradient(to right, #f9d423, #ff4e50); */
+  /* background: linear-gradient(to right, #f6d365, #fda085); */ 
+  /* Blue gradient */
+  /* background: linear-gradient(to right, #485563, #29323c); */
+  /* background: linear-gradient(135deg, #0f0f0f, #1c1c1c, #2b2b2b, #3a3a3a, #4a4a4a); */
+  /*background-color: rgb(255, 255, 250); /* Canva-like background 
+  background-attachment: fixed;
+}*/
+
+
+

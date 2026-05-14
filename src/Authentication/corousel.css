@@ -1,0 +1,432 @@
+/*
+  Responsive Carousel CSS
+  Smoothly scales across desktop, tablet, and mobile viewports.
+*/
+
+/* ---------------------------------- */
+/* 1. Global Wrapper and Container */
+/* ---------------------------------- */
+
+.carousel-wrapper {
+  background-color: var(--bg-color, #ffffff);
+  transition: background-color 0.5s ease-in-out;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-container {
+  position: relative;
+  width: 900px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+/* ---------------------------------- */
+/* 2. Individual Card Styling */
+/* ---------------------------------- */
+
+.carousel-card {
+  position: absolute;
+  cursor: pointer;
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  color: white;
+  font-family: sans-serif;
+  overflow: hidden;
+  width: 100px;
+  height: 400px;
+  top: 50px;
+}
+
+.card-icon {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 24px;
+  line-height: 1;
+  z-index: 2;
+}
+
+.card-label {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 1;
+}
+
+.main-title {
+  font-size: 72px;
+  font-weight: bold;
+  letter-spacing: 5px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.side-title {
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  transform: rotate(-90deg);
+  white-space: nowrap;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* ---------------------------------- */
+/* 3. State-Specific Styling */
+/* ---------------------------------- */
+
+.carousel-card.active {
+  z-index: 10;
+  width: 450px;
+  height: 400px;
+  transform: translateX(0) translateY(-10px) rotate(0deg);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-card.next {
+  z-index: 5;
+  width: 80px;
+  height: 400px;
+  transform: translateX(265px) rotate(5deg);
+  opacity: 1;
+}
+
+.carousel-card.prev {
+  z-index: 5;
+  width: 80px;
+  height: 400px;
+  transform: translateX(-265px) rotate(-5deg);
+  opacity: 1;
+}
+
+.carousel-card.hidden {
+  z-index: 1;
+  width: 100px;
+  height: 400px;
+  transform: translateX(0px) scale(0.8);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ---------------------------------- */
+/* 4. Controls */
+/* ---------------------------------- */
+
+.carousel-controls {
+  margin-top: 50px;
+  display: flex;
+  gap: 15px;
+}
+
+.carousel-controls button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 20px;
+  background-color: rgb(236, 166, 15);
+  border: none;
+  transition: all 0.3s ease;
+  color: #333;
+  font-weight: bold;
+  min-width: 100px;
+}
+
+.carousel-controls button:hover {
+  background-color: rgb(255, 180, 30);
+  transform: translateY(-2px);
+}
+
+.carousel-controls button:active {
+  transform: translateY(0);
+}
+
+/* ---------------------------------- */
+/* 5. RESPONSIVE MEDIA QUERIES */
+/* ---------------------------------- */
+
+/* Large Desktop (up to 1440px) */
+@media (max-width: 1440px) {
+  .carousel-container {
+    width: 800px;
+    height: 450px;
+  }
+  
+  .carousel-card {
+    height: 350px;
+  }
+  
+  .carousel-card.active {
+    width: 400px;
+    height: 350px;
+  }
+  
+  .carousel-card.next,
+  .carousel-card.prev {
+    height: 350px;
+  }
+  
+  .main-title {
+    font-size: 64px;
+  }
+}
+
+/* Tablets (up to 1024px) */
+@media (max-width: 1024px) {
+  .carousel-container {
+    width: 700px;
+    height: 420px;
+  }
+
+  .carousel-card {
+    height: 350px;
+  }
+
+  .carousel-card.active {
+    width: 360px;
+    height: 350px;
+  }
+
+  .carousel-card.next {
+    height: 350px;
+    transform: translateX(220px) rotate(5deg);
+  }
+
+  .carousel-card.prev {
+    height: 350px;
+    transform: translateX(-220px) rotate(-5deg);
+  }
+
+  .main-title {
+    font-size: 56px;
+    letter-spacing: 4px;
+  }
+
+  .side-title {
+    font-size: 18px;
+  }
+}
+
+/* Large Mobiles (up to 768px) */
+@media (max-width: 768px) {
+  .carousel-container {
+    width: 500px;
+    height: 360px;
+  }
+
+  .carousel-card {
+    height: 320px;
+  }
+
+  .carousel-card.active {
+    width: 300px;
+    height: 320px;
+  }
+
+  .carousel-card.next {
+    height: 320px;
+    transform: translateX(160px) rotate(4deg);
+  }
+
+  .carousel-card.prev {
+    height: 320px;
+    transform: translateX(-160px) rotate(-4deg);
+  }
+
+  .main-title {
+    font-size: 42px;
+    letter-spacing: 3px;
+  }
+
+  .side-title {
+    font-size: 16px;
+  }
+
+  .carousel-controls {
+    margin-top: 30px;
+  }
+
+  .carousel-controls button {
+    padding: 8px 16px;
+    font-size: 14px;
+    min-width: 80px;
+  }
+}
+
+/* Medium Mobiles (up to 640px) */
+@media (max-width: 640px) {
+  .carousel-container {
+    width: 400px;
+    height: 320px;
+  }
+
+  .carousel-card {
+    height: 280px;
+    width: 80px;
+  }
+
+  .carousel-card.active {
+    width: 250px;
+    height: 280px;
+  }
+
+  .carousel-card.next {
+    height: 280px;
+    transform: translateX(140px) rotate(3deg);
+  }
+
+  .carousel-card.prev {
+    height: 280px;
+    transform: translateX(-140px) rotate(-3deg);
+  }
+
+  .main-title {
+    font-size: 36px;
+    letter-spacing: 2px;
+  }
+
+  .side-title {
+    font-size: 14px;
+  }
+}
+
+/* Small Mobiles (up to 480px) */
+@media (max-width: 480px) {
+  .carousel-wrapper {
+    height: auto;
+    padding: 20px 0;
+  }
+
+  .carousel-container {
+    width: 320px;
+    height: 280px;
+  }
+
+  .carousel-card {
+    width: 70px;
+    height: 260px;
+    top: 10px;
+  }
+
+  .carousel-card.active {
+    width: 220px;
+    height: 260px;
+  }
+
+  .carousel-card.next {
+    height: 260px;
+    transform: translateX(110px) rotate(3deg);
+  }
+
+  .carousel-card.prev {
+    height: 260px;
+    transform: translateX(-110px) rotate(-3deg);
+  }
+
+  .main-title {
+    font-size: 28px;
+    letter-spacing: 2px;
+  }
+
+  .side-title {
+    font-size: 14px;
+  }
+
+  .carousel-controls {
+    margin-top: 20px;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .carousel-controls button {
+    padding: 6px 14px;
+    font-size: 13px;
+    min-width: 70px;
+  }
+}
+
+/* Extra Small Mobiles (up to 360px) */
+@media (max-width: 360px) {
+  .carousel-container {
+    width: 280px;
+    height: 240px;
+  }
+
+  .carousel-card {
+    width: 60px;
+    height: 220px;
+  }
+
+  .carousel-card.active {
+    width: 180px;
+    height: 220px;
+  }
+
+  .carousel-card.next {
+    height: 220px;
+    transform: translateX(90px) rotate(2deg);
+  }
+
+  .carousel-card.prev {
+    height: 220px;
+    transform: translateX(-90px) rotate(-2deg);
+  }
+
+  .main-title {
+    font-size: 24px;
+    letter-spacing: 1px;
+  }
+
+  .side-title {
+    font-size: 12px;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .carousel-card {
+    cursor: default;
+  }
+  
+  .carousel-controls button:hover {
+    transform: none;
+    background-color: rgb(236, 166, 15);
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .carousel-card {
+    border: 2px solid #000;
+  }
+  
+  .main-title,
+  .side-title {
+    text-shadow: none;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .carousel-card {
+    transition: none;
+  }
+  
+  .carousel-wrapper {
+    transition: none;
+  }
+  
+  .carousel-controls button {
+    transition: none;
+  }
+}

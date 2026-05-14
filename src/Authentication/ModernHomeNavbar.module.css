@@ -1,0 +1,180 @@
+/* ========== Navbar Container ========== */
+.modernHomeHeader {
+  position: sticky;
+  top: 0;
+  z-index: 1050;
+  backdrop-filter: blur(10px);
+}
+
+.modernHomeNavbar {
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  padding: 0.6rem 1rem;
+}
+
+/* ========== Brand ========== */
+.modernHomeBrand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  
+}
+
+.modernHomeTitle {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #222;
+  letter-spacing: 1px;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.modernHomeTitle:hover {
+  color: #f7c600;
+}
+
+/* ========== Links ========== */
+.modernHomeList {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.modernHomeLink {
+  color: #555;
+  font-weight: 500;
+  font-size: 1rem;
+  text-decoration: none;
+  position: relative;
+  padding: 0.4rem 0;
+  transition: color 0.3s ease;
+}
+
+.modernHomeLink:hover {
+  color: #f7c600;
+}
+
+.modernHomeLink::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background-color: #f7c600;
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.modernHomeLink:hover::after {
+  width: 100%;
+}
+
+.active {
+  color: #f7c600 !important;
+}
+
+.active::after {
+  width: 100%;
+}
+
+/* ========== Buttons ========== */
+.modernHomeLoginBtn {
+  background: transparent !important;
+  border: 2px solid #f7c600;
+  color: #f7c600;
+  border-radius: 6px;
+  font-weight: 600;
+  padding: 6px 16px;
+  transition: all 0.3s ease;
+}
+
+.modernHomeLoginBtn:hover {
+  background: #f7c600 !important;
+  color: white;
+}
+
+.modernHomeSignupBtn {
+  background: #f7c600;
+  border: none;
+  color: white;
+  font-weight: 600;
+  border-radius: 6px;
+  padding: 6px 16px;
+  transition: all 0.3s ease;
+}
+
+.modernHomeSignupBtn:hover {
+  background: #e4b200;
+}
+
+/* ========== Hamburger ========== */
+.modernHomeToggler {
+  border: none;
+  outline: none;
+  background: none !important;
+}
+
+.navbar-toggler-icon {
+  background-image: none !important;
+  width: 25px;
+  height: 2px;
+  background-color: #000;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 2px;
+  background-color: #000;
+  left: 0;
+  transition: all 0.3s ease;
+}
+
+.navbar-toggler-icon::before {
+  top: -7px;
+}
+
+.navbar-toggler-icon::after {
+  top: 7px;
+}
+
+/* Animation when toggled */
+.modernHomeToggler[aria-expanded="true"] .navbar-toggler-icon {
+  background-color: transparent;
+}
+
+.modernHomeToggler[aria-expanded="true"] .navbar-toggler-icon::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.modernHomeToggler[aria-expanded="true"] .navbar-toggler-icon::after {
+  transform: rotate(-45deg);
+  top: 0;
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 991px) {
+  .modernHomeMenu {
+    background: #fff;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    margin-top: 0.5rem;
+  }
+
+  .modernHomeList {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .modernHomeLoginBtn,
+  .modernHomeSignupBtn {
+    width: 100px;
+  }
+}

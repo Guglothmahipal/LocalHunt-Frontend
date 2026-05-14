@@ -1,0 +1,850 @@
+/* ----------------------------- Global Styles ----------------------------- */
+.HomeshowHero {
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  background: linear-gradient(135deg, #FFF9E6 0%, #FFF3C4 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.HomeshowHeroContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 3rem;
+  min-height: 80vh;
+}
+
+.HomeshowHeroLeft {
+  flex: 1;
+  max-width: 50%;
+}
+
+.HomeshowHeroTitle {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 3.5rem;
+  color: #222222;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.HomeshowHeroSubtitle {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.3rem;
+  color: #222222;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.HomeshowExploreBtn {
+  background: linear-gradient(135deg, #FFD700 0%, #FFB300 100%);
+  color: #222222;
+  border: none;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 200, 0, 0.3);
+  margin-bottom: 2rem;
+  display: block;
+}
+
+.HomeshowExploreBtn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255, 200, 0, 0.4);
+  background: linear-gradient(135deg, #FFB300 0%, #FFD700 100%);
+}
+
+.HomeshowContentShops {
+  margin-top: 2rem;
+}
+
+.HomeshowContentShops p {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.2rem;
+  color: #222222;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.HomeshowContentShops ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.HomeshowContentShops li {
+  margin-bottom: 0.5rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.HomeshowContentShops span {
+  background: linear-gradient(135deg, #FFD700, #FFB300);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.HomeshowHeroRight {
+  flex: 1;
+  max-width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Mobile Map - Hidden on desktop */
+.HomeshowMobileMap {
+  display: none;
+  margin: 2rem 0;
+}
+
+.HomeshowMapWrapper {
+  width: 100%;
+  height: 400px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  background: #f8f9fa;
+  position: relative;
+}
+
+.HomeshowMap {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+}
+
+/* ----------------------------- Map Skeleton Loading ----------------------------- */
+.HomeshowMapSkeleton {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.HomeshowSkeletonPulse {
+  width: 100%;
+  height: 100%;
+  animation: HomeshowSkeletonPulse 2s infinite;
+}
+
+@keyframes HomeshowSkeletonPulse {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.HomeshowSkeletonContent {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+}
+
+.HomeshowSkeletonText {
+  height: 12px;
+  background: rgba(255, 255, 255, 0.7);
+  margin-bottom: 8px;
+  border-radius: 6px;
+}
+
+.HomeshowSkeletonText:first-child {
+  width: 70%;
+}
+
+.HomeshowSkeletonText:last-child {
+  width: 50%;
+}
+
+.HomeshowSkeletonButton {
+  height: 36px;
+  width: 120px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 18px;
+  margin-top: 8px;
+}
+
+.HomeshowMapHidden {
+  display: none;
+}
+
+.HomeshowMapError {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8f9fa;
+  border-radius: 20px;
+  border: 2px dashed #ff6b6b;
+  color: #dc3545;
+  text-align: center;
+  padding: 2rem;
+}
+
+.HomeshowMapError p {
+  margin: 0;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1rem;
+}
+
+/* ----------------------------- Homepage Service --------------------------------- */
+.HomeshowServiceGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 25px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.HomeshowServiceCard {
+  transition: all 0.3s ease;
+  cursor: pointer;
+  background-color: #fff;
+  border: none;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.HomeshowServiceCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Icon container */
+.HomeshowServiceIconContainer {
+  position: relative;
+  background-color: #ffc908;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem 1rem 0 0;
+  overflow: hidden;
+}
+
+/* FontAwesome icon */
+.HomeshowServiceIcon {
+  font-size: 4rem;
+  color: black;
+  transition: all 0.5s ease;
+  animation: HomeshowFloatIcon 3s ease-in-out infinite;
+}
+
+@keyframes HomeshowFloatIcon {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.HomeshowServiceCard:hover .HomeshowServiceIcon {
+  opacity: 0;
+  transform: scale(1.2);
+}
+
+/* Overlay quote */
+.HomeshowOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  border-radius: 1rem 1rem 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.HomeshowServiceCard:hover .HomeshowOverlay {
+  opacity: 1;
+}
+
+.HomeshowOverlayText {
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: 0.8px;
+  text-align: center;
+  padding: 10px;
+  animation: HomeshowFadeInUp 0.6s ease;
+}
+
+@keyframes HomeshowFadeInUp {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.HomeshowServiceContent {
+  padding: 1.5rem;
+  text-align: center;
+  background: #ffc908;
+}
+
+.HomeshowServiceName {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: #222222;
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.HomeshowPopularShops {
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 20px;
+  background: black;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.HomeshowService {
+  padding: 5rem 1rem;
+  background: #ffffff;
+}
+
+.HomeshowContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ----------------------------- Responsive Design for Service Grid ----------------------------- */
+@media (max-width: 1200px) {
+  .HomeshowServiceGrid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 992px) {
+  .HomeshowServiceGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  
+  .HomeshowPopularShops {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .HomeshowServiceGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 15px;
+  }
+  
+  .HomeshowServiceIconContainer {
+    height: 150px;
+  }
+  
+  .HomeshowServiceIcon {
+    font-size: 3rem;
+  }
+  
+  .HomeshowOverlayText {
+    font-size: 1rem;
+  }
+  
+  .HomeshowPopularShops {
+    font-size: 2rem;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .HomeshowServiceGrid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 10px;
+  }
+  
+  .HomeshowServiceIconContainer {
+    height: 140px;
+  }
+  
+  .HomeshowServiceIcon {
+    font-size: 2.5rem;
+  }
+  
+  .HomeshowOverlayText {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+  
+  .HomeshowServiceContent {
+    padding: 1rem;
+  }
+  
+  .HomeshowServiceName {
+    font-size: 1rem;
+  }
+  
+  .HomeshowPopularShops {
+    font-size: 1.8rem;
+    padding: 10px;
+  }
+}
+
+/* ----------------------------- How It Works Section ----------------------------- */
+.HomeshowSteps {
+  padding: 5rem 1rem;
+  background: #FFF9E6;
+  text-align: center;
+}
+
+.HomeshowSectionTitle {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: #222222;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.HomeshowStepCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.HomeshowStepCard {
+  background: #ffffff;
+  padding: 2.5rem 1.5rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.HomeshowStepCard:hover {
+  box-shadow: 0 20px 40px rgba(255, 200, 0, 0.2);
+  border-color: #FFD700;
+}
+
+.HomeshowStepIcon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+.HomeshowStepCard h3 {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 600;
+  color: #222222;
+  font-size: 1.2rem;
+}
+
+/* ----------------------------- Popular Categories Section ----------------------------- */
+.HomeshowCategories {
+  padding: 5rem 1rem;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.HomeshowScrollRow {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  padding: 2rem 0;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.HomeshowScrollRow::-webkit-scrollbar {
+  display: none;
+}
+
+.HomeshowCategoryCard {
+  flex: 0 0 auto;
+  width: 200px;
+  height: 120px;
+  background: #ffffff;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  scroll-snap-align: start;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.HomeshowCategoryCard:hover {
+  box-shadow: 0 10px 25px rgba(255, 200, 0, 0.3);
+}
+
+.HomeshowCategoryIcon {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.HomeshowCategoryName {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: #222222;
+  font-size: 1rem;
+}
+
+/* ----------------------------- Top Vendors Section ----------------------------- */
+.HomeshowVendors {
+  padding: 5rem 1rem;
+  background: #FFF9E6;
+}
+
+.HomeshowVendorGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.HomeshowVendorCard {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  text-align: center;
+  border: 2px solid transparent;
+}
+
+.HomeshowVendorCard:hover {
+  box-shadow: 0 15px 35px rgba(255, 200, 0, 0.2);
+  border-color: #FFD700;
+}
+
+.HomeshowVendorName {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: #222222;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.HomeshowVendorRating {
+  color: #FFD700;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.HomeshowVendorCategory {
+  font-family: 'Nunito', sans-serif;
+  color: #666;
+  font-size: 1rem;
+}
+
+/* ----------------------------- Testimonials Section ----------------------------- */
+.HomeshowTestimonials {
+  padding: 5rem 1rem;
+  background: #ffffff;
+}
+
+.HomeshowTestimonialCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.HomeshowTestimonialCard {
+  background: #ffffff;
+  padding: 2.5rem 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  text-align: center;
+  position: relative;
+}
+
+.HomeshowTestimonialCard:hover {
+  box-shadow: 0 15px 40px rgba(255, 200, 0, 0.2);
+}
+
+.HomeshowTestimonialStars {
+  color: #FFD700;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.HomeshowTestimonialText {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #222222;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+.HomeshowTestimonialAuthor {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.HomeshowTestimonialAuthor strong {
+  font-family: 'Poppins', sans-serif;
+  color: #222222;
+  font-size: 1.1rem;
+}
+
+.HomeshowTestimonialAuthor span {
+  font-family: 'Nunito', sans-serif;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* ----------------------------- Final CTA Section ----------------------------- */
+.HomeshowFinalCTA {
+  padding: 6rem 1rem;
+  background: linear-gradient(135deg, #FFD700 0%, #FFB300 100%);
+  text-align: center;
+}
+
+.HomeshowCTATitle {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 2.8rem;
+  color: #222222;
+  margin-bottom: 2rem;
+}
+
+.HomeshowCTABtn {
+  background: #222222;
+  color: #ffffff;
+  border: none;
+  padding: 1.2rem 3rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.HomeshowCTABtn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+  background: #000000;
+}
+
+/* Leaflet Tooltip Customization */
+.HomeshowShopTooltip {
+  background: #FFD700 !important;
+  color: #222222 !important;
+  border: none !important;
+  border-radius: 10px !important;
+  font-weight: 600 !important;
+  padding: 8px 12px !important;
+  font-size: 0.9rem !important;
+}
+
+/* Fix for Leaflet map container */
+/* ✅ Correct Fix for Leaflet Map Rendering */
+#HomeshowMap .leaflet-container,
+#HomeshowMapMobile .leaflet-container {
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.HomeshowMapWrapper {
+  width: 100%;
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #f8f9fa;
+}
+
+.HomeshowMap {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+}
+
+/* ----------------------------- Responsive Design ----------------------------- */
+@media (max-width: 768px) {
+  .HomeshowHero {
+    padding: 1rem;
+  }
+  
+  .HomeshowHeroContent {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+  
+  .HomeshowHeroLeft,
+  .HomeshowHeroRight {
+    max-width: 100%;
+    width: 100%;
+  }
+  
+  .HomeshowHeroTitle {
+    font-size: 2.5rem;
+  }
+  
+  .HomeshowHeroSubtitle {
+    font-size: 1.1rem;
+  }
+  
+  /* Hide desktop map on mobile */
+  .HomeshowHeroRight {
+    display: none;
+  }
+  
+  /* Show mobile map */
+  .HomeshowMobileMap {
+    display: block;
+  }
+  
+  .HomeshowMapWrapper {
+    height: 300px;
+  }
+  
+  .HomeshowContentShops ol {
+    text-align: left;
+    display: inline-block;
+  }
+  
+  .HomeshowServiceGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .HomeshowStepCards {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .HomeshowVendorGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .HomeshowTestimonialCards {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .HomeshowCTATitle {
+    font-size: 2rem;
+  }
+  
+  .HomeshowPopularShops {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .HomeshowHeroTitle {
+    font-size: 2rem;
+  }
+  
+  .HomeshowHeroSubtitle {
+    font-size: 1rem;
+  }
+  
+  .HomeshowExploreBtn {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+  }
+  
+  .HomeshowSectionTitle {
+    font-size: 2rem;
+  }
+  
+  .HomeshowCTATitle {
+    font-size: 1.8rem;
+  }
+  
+  .HomeshowPopularShops {
+    font-size: 1.5rem;
+  }
+  
+  .HomeshowMapWrapper {
+    height: 250px;
+  }
+  
+  .HomeshowCategoryCard {
+    width: 160px;
+    height: 100px;
+  }
+  
+  .HomeshowCategoryIcon {
+    font-size: 2rem;
+  }
+  
+  .HomeshowCategoryName {
+    font-size: 0.9rem;
+  }
+}
+
+.HomeshowHeroSubtitle {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Fallback location styles */
+.HomeshowFallbackNotice {
+  color: #ff6b35;
+  font-weight: 600;
+  font-size: 0.9em;
+}
+
+.HomeshowLocationPrompt {
+  background: rgba(255, 107, 53, 0.1);
+  border: 1px solid rgba(255, 107, 53, 0.3);
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-top: 15px;
+  text-align: center;
+}
+
+.HomeshowLocationPrompt p {
+  margin: 0;
+  color: #ff6b35;
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+.HomeshowFallbackBadge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #ff6b35;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.7em;
+  font-weight: 600;
+  z-index: 1000;
+  pointer-events: none;
+}

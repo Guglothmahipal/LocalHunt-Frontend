@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Filters</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 15px; }
+    .filters {
+      width: 280px;
+      height: 100vh;
+      border-right: 2px solid #000;
+    }
+    .filters h3 { margin-top: 0; }
+    .dropdown { margin-bottom: 15px; }
+    select, input[type="text"], input[type="range"] {
+      padding: 5px;
+      margin-top: 5px;
+      margin-bottom: 10px;
+      width: 100%;
+    }
+    .speciality label { display: block; margin-bottom: 6px; }
+  </style>
+</head>
+<body>
+  <div class="filters">
+    <h3>Filters</h3>
+    <p>Popular shops in Narayanaguda, Hyderabad, 500029</p>
+
+    <!-- Category -->
+    <div class="dropdown">
+      <label>Category:</label>
+      <select id="category">
+        <option>Medical</option>
+        <option>Grocery</option>
+        <option>Electronics</option>
+        <option>Furniture</option>
+        <option>Clothing</option>
+        <option>Repair Shops</option>
+      </select>
+    </div>
+
+    <!-- Distance -->
+    <p style="font-weight:600">Distance</p>
+    <input type="range" id="distance" min="100" max="5000" step="50" value="1000">
+    <input type="text" id="distanceValue" value="1000" style="width: 60px;"> M
+
+    <!-- Shop Status -->
+    <div style="margin-top:15px;">
+      <span style="font-weight:600;">Shop Status</span><br>
+      <label><input type="checkbox" id="status"> Open Now</label>
+    </div>
+
+    <!-- Verified Vendors -->
+    <div class="dropdown">
+      <label>Verified Vendors:</label>
+      <select id="verify">
+        <option>Yes</option>
+        <option>No</option>
+      </select>
+    </div>
+
+    <!-- Service Offered -->
+    <div class="dropdown">
+      <label>Service Offered:</label>
+      <select id="service">
+        <option>Home service</option>
+        <option>Walk-in only</option>
+        <option>Consultation available</option>
+      </select>
+    </div>
+
+    <!-- Speciality -->
+    <div class="speciality">
+      <p style="font-weight:600;">Speciality</p>
+      <label><input type="checkbox" value="Cardiology"> Cardiology</label>
+      <label><input type="checkbox" value="Neurology"> Neurology</label>
+      <label><input type="checkbox" value="Orthopedics"> Orthopedics</label>
+      <label><input type="checkbox" value="Pediatrics"> Pediatrics</label>
+      <label><input type="checkbox" value="Dermatology"> Dermatology</label>
+      <label><input type="checkbox" value="Robotics"> Robotics</label>
+      <label><input type="checkbox" value="Nanotechnology"> Nanotechnology</label>
+      <label><input type="checkbox" value="Cybersecurity"> Cybersecurity</label>
+      <label><input type="checkbox" value="Aeronautics"> Aeronautics</label>
+      <label><input type="checkbox" value="Biotechnology"> Biotechnology</label>
+      <label><input type="checkbox" value="Finance"> Finance</label>
+      <label><input type="checkbox" value="Marketing"> Marketing</label>
+      <label><input type="checkbox" value="Logistics"> Logistics</label>
+      <label><input type="checkbox" value="Hospitality"> Hospitality</label>
+      <label><input type="checkbox" value="Entrepreneurship"> Entrepreneurship</label>
+    </div>
+  </div>
+
+  <script>
+    // Sync distance slider & text input
+    const slider = document.getElementById("distance");
+    const text = document.getElementById("distanceValue");
+    slider.addEventListener("input", () => {
+      text.value = slider.value;
+    });
+    text.addEventListener("input", () => {
+      slider.value = text.value || 0;
+    });
+  </script>
+</body>
+</html>

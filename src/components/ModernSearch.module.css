@@ -1,0 +1,295 @@
+/* Modern UI Variables */
+:root {
+  --modern-bg-light: #e0e7ff; /* Soft lavender */
+  --modern-bg-dark: #cbd5e0;  /* Lighter gray-blue */
+  --modern-primary: #5a67d8;  /* Deep blue */
+  --modern-secondary: #805ad5; /* Purple */
+  --modern-text: #2d3748;     /* Dark gray */
+  --modern-shadow-light: rgba(255, 255, 255, 0.7);
+  --modern-shadow-dark: rgba(100, 100, 100, 0.2);
+  --modern-border: 1px solid rgba(255, 255, 255, 0.3);
+  --modern-glass-bg: rgba(255, 255, 255, 0.75); /* Frosted glass effect */
+  --modern-accent-yellow: #ffc908; /* From your existing theme */
+}
+
+.searchOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Gradient from reference image */
+  background: linear-gradient(135deg, var(--modern-bg-light) 0%, var(--modern-bg-dark) 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  backdrop-filter: blur(10px); /* Frosted glass effect for background */
+  animation: fadeIn 0.3s ease-out;
+}
+
+.searchModal {
+  background-color: var(--modern-glass-bg);
+  border-radius: 25px;
+  padding: 30px 40px;
+  width: 90%;
+  max-width: 800px;
+  max-height: 85vh;
+  position: relative;
+  box-shadow: 10px 10px 30px var(--modern-shadow-dark),
+              -5px -5px 15px var(--modern-shadow-light);
+  border: var(--modern-border);
+  display: flex;
+  flex-direction: column;
+  color: var(--modern-text);
+  overflow: hidden; /* For scrollable content */
+  animation: slideIn 0.3s ease-out;
+}
+
+.closeButton, .fullscreenButton {
+  position: absolute;
+  top: 25px;
+  background: var(--modern-glass-bg);
+  border: var(--modern-border);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.3em;
+  color: var(--modern-primary);
+  box-shadow: 3px 3px 6px var(--modern-shadow-dark),
+              -3px -3px 6px var(--modern-shadow-light);
+  transition: all 0.2s ease;
+}
+.closeButton:hover, .fullscreenButton:hover {
+  box-shadow: 1px 1px 2px var(--modern-shadow-dark) inset,
+              -1px -1px 2px var(--modern-shadow-light) inset;
+  transform: scale(0.98);
+}
+
+.closeButton {
+  right: 25px;
+}
+.fullscreenButton {
+  right: 75px; /* Positioned next to close button */
+}
+
+
+.searchGroup {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 30px;
+  background-color: var(--modern-glass-bg);
+  border: var(--modern-border);
+  border-radius: 50px; /* Pill shape */
+  padding: 12px 20px;
+  box-shadow: 5px 5px 15px var(--modern-shadow-dark) inset,
+              -5px -5px 15px var(--modern-shadow-light) inset;
+  transition: all 0.3s ease;
+}
+.searchGroup:focus-within {
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.1) inset; /* Deeper inset on focus */
+}
+
+.searchIcon {
+  color: var(--modern-primary);
+  font-size: 1.2em;
+  margin-right: 10px;
+}
+
+.searchInput {
+  flex-grow: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 1.1em;
+  color: var(--modern-text);
+  padding: 0; /* Reset default input padding */
+}
+.searchInput::placeholder {
+  color: #a0aec0;
+}
+
+.clearSearchButton {
+  background: none;
+  border: none;
+  color: #a0aec0;
+  font-size: 1.2em;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: color 0.2s ease;
+}
+.clearSearchButton:hover {
+  color: var(--modern-primary);
+}
+
+.contentSection {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding-right: 10px; /* For scrollbar space */
+}
+
+.loadingSpinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 150px;
+}
+
+.searchResults, .recentSearches {
+  margin-top: 20px;
+}
+
+.sectionTitle {
+  font-size: 1.4em;
+  font-weight: 700;
+  color: var(--modern-primary);
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.noResults {
+  text-align: center;
+  padding: 40px;
+  font-size: 1.1em;
+  color: #666;
+}
+
+/* Search Results Grid */
+.resultsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.resultCard {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background-color: var(--modern-glass-bg);
+  border-radius: 15px;
+  padding: 15px;
+  text-decoration: none;
+  color: var(--modern-text);
+  box-shadow: 5px 5px 15px var(--modern-shadow-dark),
+              -5px -5px 15px var(--modern-shadow-light);
+  transition: all 0.2s ease;
+  overflow: hidden;
+}
+.resultCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.resultImage {
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.resultDetails {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.resultName {
+  font-weight: 600;
+  margin: 0;
+  font-size: 1.05em;
+  line-height: 1.3;
+}
+
+.visitButton {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 5px;
+  font-size: 0.9em;
+  color: var(--modern-accent-yellow); /* Keep original theme color for primary action */
+  font-weight: 600;
+}
+.visitButton svg {
+  margin-left: 5px;
+}
+
+/* Recent Searches */
+.recentList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.recentSearchItem {
+  background-color: var(--modern-glass-bg);
+  border: var(--modern-border);
+  border-radius: 30px;
+  padding: 10px 18px;
+  cursor: pointer;
+  font-size: 0.95em;
+  color: var(--modern-text);
+  font-weight: 500;
+  box-shadow: 2px 2px 5px var(--modern-shadow-dark),
+              -2px -2px 5px var(--modern-shadow-light);
+  transition: all 0.2s ease;
+}
+.recentSearchItem:hover {
+  background-color: var(--modern-primary);
+  color: white;
+  box-shadow: 0 0 10px rgba(90, 103, 216, 0.6);
+  transform: translateY(-1px);
+}
+
+.refreshButton {
+  background: none;
+  border: none;
+  color: var(--modern-primary);
+  font-size: 1.3em;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: color 0.2s ease, transform 0.3s ease;
+}
+.refreshButton:hover {
+  color: var(--modern-secondary);
+  transform: rotate(45deg);
+}
+
+
+/* Scrollbar Styling for .contentSection */
+.contentSection::-webkit-scrollbar {
+  width: 8px;
+}
+.contentSection::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}
+.contentSection::-webkit-scrollbar-thumb {
+  background-color: rgba(90, 103, 216, 0.5); /* Semi-transparent modern-primary */
+  border-radius: 10px;
+  border: 2px solid var(--modern-glass-bg);
+}
+.contentSection::-webkit-scrollbar-thumb:hover {
+  background-color: var(--modern-primary);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { transform: translateY(20px) scale(0.95); opacity: 0; }
+  to { transform: translateY(0) scale(1); opacity: 1; }
+}
